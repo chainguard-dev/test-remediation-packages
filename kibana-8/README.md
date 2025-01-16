@@ -1,3 +1,4 @@
+```yaml
 ---
 # README for command 14
 command:
@@ -11,3 +12,4 @@ image-ref: "cgr.dev/chainguard-private/kibana-fips@sha256:351c8f76f6d16e26893277
 github-repository: "os"
 package-name: "kibana-8"
 vuln-component-name: "cross-spawn"
+```

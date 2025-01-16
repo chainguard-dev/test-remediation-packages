@@ -1,3 +1,4 @@
+```yaml
 # README for command 5
 command:
 name: "ai-cve-remediation"
@@ -9,3 +10,4 @@ vuln-type: "npm"
 image-ref: "cgr.dev/chainguard-private/kubeflow-centraldashboard@sha256:792d723d937b9fd1a05d8d2cb9c1763ac7377fec9815ab35bb02d866f69fc148"
 github-repository: "os"
 package-name: "kubeflow-centraldashboard"
+```

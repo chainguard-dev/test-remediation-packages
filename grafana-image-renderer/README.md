@@ -1,3 +1,4 @@
+```yaml
 ---
 # README for command 9
 command:
@@ -11,3 +12,4 @@ image-ref: "cgr.dev/chainguard-private/grafana-image-renderer@sha256:99733d5144b
 github-repository: "os"
 package-name: "grafana-image-renderer"
 arch: "x86_64"
+```

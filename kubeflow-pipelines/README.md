@@ -1,3 +1,4 @@
+```yaml
 # README for command 12
 command:
 name: "ai-cve-remediation"
@@ -10,3 +11,4 @@ image-ref: "cgr.dev/chainguard-private/kubeflow-pipelines-frontend@sha256:eb05e3
 github-repository: "os"
 package-name: "kubeflow-pipelines"
 vuln-component-name: "path-to-regexp"
+```

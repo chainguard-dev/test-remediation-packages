@@ -1,3 +1,4 @@
+```yaml
 # README for command 6
 command:
 name: "ai-cve-remediation"
@@ -13,3 +14,4 @@ vuln-component-name: "Jinja2"
 dry-run: true
 vuln-fixed-version: "3.1.5"
 vuln-component-version: "3.1.4"
+```

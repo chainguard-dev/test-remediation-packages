@@ -1,3 +1,4 @@
+```yaml
 ---
 # README for command 10
 command:
@@ -12,3 +13,4 @@ github-repository: "os"
 package-name: "jitsucom-jitsu"
 arch: "x86_64"
 vuln-component-name: "15.1.1"
+```

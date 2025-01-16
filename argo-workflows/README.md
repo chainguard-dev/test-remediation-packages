@@ -1,3 +1,4 @@
+```yaml
 # README for command 17
 command:
 name: "ai-cve-remediation"
@@ -12,8 +13,9 @@ vuln-component-name: "braces"
 vuln-component-version: "2.3.2"
 vuln-fixed-version: "3.0.3"
 dry-run: true
+```
 
-
+```yaml
 # README for command 18
 command:
 name: "ai-cve-remediation"
@@ -28,3 +30,4 @@ vuln-component-name: "micromatch"
 vuln-component-version: "3.1.10"
 vuln-fixed-version: "4.0.8"
 dry-run: true
+```

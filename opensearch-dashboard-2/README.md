@@ -1,3 +1,4 @@
+```yaml
 command:
 name: "ai-cve-remediation"
 description: "The Wolfi CVE remediation tool"
@@ -9,3 +10,4 @@ image-ref: "cgr.dev/chainguard-private/opensearch-dashboards@sha256:a7fe5ce2a7b7
 github-repository: "os"
 package-name: "opensearch-dashboards-2"
 vuln-component-name: "cross-spawn"
+```

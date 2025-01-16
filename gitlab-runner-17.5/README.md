@@ -1,3 +1,4 @@
+```yaml
 # README for command 19
 command:
 name: "ai-cve-remediation"
@@ -12,3 +13,4 @@ vuln-component-name: "x/net"
 vuln-component-version: 0.30.0 
 vuln-fixed-version: 0.33.0
 dry-run: true
+```

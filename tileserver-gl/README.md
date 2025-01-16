@@ -1,3 +1,4 @@
+```yaml
 # README for command 15
 command:
 name: "ai-cve-remediation"
@@ -10,8 +11,9 @@ image-ref: "cgr.dev/chainguard-private/tileserver-gl@sha256:419d523bf8c53136c5c3
 github-repository: "os"
 package-name: "tileserver-gl"
 vuln-component-name: "path-to-regexp"
+```
 
----
+```yaml
 # README for command 16
 command:
 name: "ai-cve-remediation"
@@ -24,3 +26,4 @@ image-ref: "cgr.dev/chainguard-private/tileserver-gl@sha256:2705b767f976b43f29da
 github-repository: "os"
 package-name: "tileserver-gl"
 vuln-component-name: "cross-spawn"
+```

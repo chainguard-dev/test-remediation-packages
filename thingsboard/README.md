@@ -1,4 +1,5 @@
 ---
+```yaml
 # README for command 11
 command:
 name: "ai-cve-remediation"
@@ -11,3 +12,4 @@ image-ref: "cgr.dev/chainguard-private/thingsboard-tb-web-ui@sha256:2783757fd958
 github-repository: "os"
 package-name: "thingsboard"
 vuln-component-name: "path-to-regexp"
+```
