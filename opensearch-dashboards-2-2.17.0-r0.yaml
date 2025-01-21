@@ -1,6 +1,6 @@
 package:
-  name: opensearch-dashboards-2
-  version: 2.17.1 # when updating please check if we can remove the patched package.json for the reporting plugin
+  name: opensearch-dashboards-2-2.17.0-r0
+  version: 2.17.1
   epoch: 1
   description: Open source visualization dashboards for OpenSearch
   copyright:
@@ -11,7 +11,6 @@ package:
   dependencies:
     runtime:
       - nodejs-18
-
 environment:
   contents:
     packages:
@@ -36,7 +35,6 @@ environment:
   environment:
     CC: gcc
     CXX: g++
-
 data:
   - name: plugins
     items:
@@ -53,58 +51,69 @@ data:
       security-analytics-dashboards-plugin: securityAnalyticsDashboards
       security-dashboards-plugin: securityDashboards
       dashboards-search-relevance: searchRelevanceDashboards
-
 pipeline:
   - uses: git-checkout
     with:
       repository: https://github.com/opensearch-project/OpenSearch-Dashboards.git
       tag: ${{package.version}}
       expected-commit: 62cc0320399aef63aa09689aaaf000adafbedeef
-      cherry-picks: |
-        main/5e19749ec40230316ba2688c38e5c62f74ddb71d: CVE-2024-37890
+      cherry-picks: 'main/5e19749ec40230316ba2688c38e5c62f74ddb71d: CVE-2024-37890
 
-  - runs: |
-      # Workaround for "OpenSearch Dashboards should not be run as root.  Use --allow-root to continue."
+      '
+  - runs: '# Workaround for "OpenSearch Dashboards should not be run as root.  Use --allow-root to continue."
+
       # This change will add the --allow-root when running the build_ts_refs and register_git_hook scripts
-      sed -i 's/\("osd:bootstrap": "scripts\/use_node scripts\/build_ts_refs\)\( && scripts\/use_node scripts\/register_git_hook\)/\1 --allow-root\2 --allow-root/' package.json
 
-  - runs: |
-      # Create "resolutions" section of package.json
-      jq '.resolutions |= (if . then . else {} end)' package.json > temp.json && mv temp.json package.json
-      for override in '"**/hoek"="npm:@hapi/hoek@>=8.5.1"'; do
-        jq ".resolutions.${override}" package.json > temp.json && mv temp.json package.json
-      done
+      sed -i ''s/\("osd:bootstrap": "scripts\/use_node scripts\/build_ts_refs\)\( && scripts\/use_node scripts\/register_git_hook\)/\1 --allow-root\2 --allow-root/'' package.json
 
-  - runs: |
-      set -x
+    '
+  - runs: "# Create \"resolutions\" section of package.json\njq '.resolutions |= (if . then . else {} end)' package.json > temp.json && mv temp.json package.json\nfor override in '\"**/hoek\"=\"npm:@hapi/hoek@>=8.5.1\"'; do\n  jq \".resolutions.${override}\" package.json > temp.json && mv temp.json package.json\ndone\n"
+  - runs: 'set -x
+
 
       # Our commond LDFLAGS cause some issues when building for aarch64. We
+
       # unset our global flags to allow the build to succeed.
+
       unset LDFLAGS
 
+
       # fix CVE-2024-47764
-      resolutions='{"**/cookie": "^0.7.0"}'
-      jq --argjson resolutions "$resolutions" '.resolutions += $resolutions' package.json > temp.json && mv temp.json package.json
+
+      resolutions=''{"**/cookie": "^0.7.0"}''
+
+      jq --argjson resolutions "$resolutions" ''.resolutions += $resolutions'' package.json > temp.json && mv temp.json package.json
+
 
       # fix CVE-2024-45801
-      devDependencies='{"dompurify": "^3.1.3"}'
-      jq --argjson devDependencies "$devDependencies" '.devDependencies += $devDependencies' package.json > temp.json && mv temp.json package.json
+
+      devDependencies=''{"dompurify": "^3.1.3"}''
+
+      jq --argjson devDependencies "$devDependencies" ''.devDependencies += $devDependencies'' package.json > temp.json && mv temp.json package.json
+
 
       yarn osd bootstrap --allow-root --silent 2>/dev/null
 
+
       yarn build-platform --skip-os-packages --skip-archives --release --allow-root
 
+
       # Delete the node directory to ensure we use the system node.
+
       rm -r build/opensearch-dashboards-${{package.version}}-linux-*/node
 
+
       mkdir -p "${{targets.destdir}}/usr/share"
+
       cp -r build/opensearch-dashboards-${{package.version}}-linux-* "${{targets.destdir}}/usr/share/opensearch-dashboards"
 
+
       # Remove the default config file, as it will be provided by the config package which comes from a different repository.
+
       rm -r ${{targets.destdir}}/usr/share/opensearch-dashboards/config/opensearch_dashboards.yml
 
+    '
   - uses: strip
-
 subpackages:
   - name: ${{package.name}}-config
     description: Compatibility package to place Docker startup scripts.
@@ -114,54 +123,33 @@ subpackages:
           repository: https://github.com/opensearch-project/opensearch-build
           tag: ${{package.version}}
           destination: opensearch-build
-          expected-commit: d0abadc62f63b10a6ed683950451a65f5c2cd457 # will need to be manually updated when opensearch dashboard auto update happens
-      - runs: |
-          install -Dm755 opensearch-build/docker/release/config/opensearch-dashboards/opensearch-dashboards-docker-entrypoint-2.x.sh ${{targets.contextdir}}/usr/share/opensearch-dashboards/opensearch-dashboards-docker-entrypoint.sh
+          expected-commit: d0abadc62f63b10a6ed683950451a65f5c2cd457
+      - runs: 'install -Dm755 opensearch-build/docker/release/config/opensearch-dashboards/opensearch-dashboards-docker-entrypoint-2.x.sh ${{targets.contextdir}}/usr/share/opensearch-dashboards/opensearch-dashboards-docker-entrypoint.sh
+
           install -Dm655 opensearch-build/config/opensearch_dashboards-2.x.yml ${{targets.contextdir}}/usr/share/opensearch-dashboards/config/opensearch_dashboards.yml
+
           install -Dm655 opensearch-build/docker/release/config/opensearch-dashboards/opensearch.example.org.key ${{targets.contextdir}}/usr/share/opensearch-dashboards/config/opensearch.example.org.key
+
           install -Dm655 opensearch-build/docker/release/config/opensearch-dashboards/opensearch.example.org.cert ${{targets.contextdir}}/usr/share/opensearch-dashboards/config/opensearch.example.org.cert
 
+        '
   - range: plugins
     name: ${{package.name}}-${{range.key}}
     pipeline:
-      # Delete other plugins. Opensearch can only build one at a time, otherwise we run into conflicting dependencies version issues with yarn.
-      - runs: |
-          rm -r plugins/* || true
+      - runs: 'rm -r plugins/* || true
+
+        '
       - uses: git-checkout
         with:
           repository: https://github.com/opensearch-project/${{range.key}}.git
           tag: ${{package.version}}.0
           destination: ./plugins/${{range.value}}
-      - runs: |
-          # fix cve CVE-2024-45801
-          cd ./plugins/${{range.value}}
-          if [ ${{range.value}} = "reportsDashboards" ]
-          then
-            # Define the dependencies
-            dependencies='{"dompurify": "^3.1.3"}'
-            # Apply the dependencies
-            jq --argjson dependencies "$dependencies" '.dependencies += $dependencies' package.json > temp.json && mv temp.json package.json
-          fi
-
-          yarn osd bootstrap --allow-root --silent 2>/dev/null
-          node /home/build/scripts/plugin_helpers build --allow-root --skip-archive
-
-          if [ ${{range.value}} = "reportsDashboards" ]
-          then
-            # Remove a test directory of the `resolver` package to prevent surfacing a false-positive.
-            # See https://github.com/browserify/resolve/issues/288
-            rm -r build/opensearch-dashboards/${{range.value}}/node_modules/resolve/test
-          fi
-
-          mkdir -p "${{targets.contextdir}}/usr/share/opensearch-dashboards/plugins"
-          cp -r build/opensearch-dashboards/${{range.value}} "${{targets.contextdir}}/usr/share/opensearch-dashboards/plugins/"
-
+      - runs: "# fix cve CVE-2024-45801\ncd ./plugins/${{range.value}}\nif [ ${{range.value}} = \"reportsDashboards\" ]\nthen\n  # Define the dependencies\n  dependencies='{\"dompurify\": \"^3.1.3\"}'\n  # Apply the dependencies\n  jq --argjson dependencies \"$dependencies\" '.dependencies += $dependencies' package.json > temp.json && mv temp.json package.json\nfi\n\nyarn osd bootstrap --allow-root --silent 2>/dev/null\nnode /home/build/scripts/plugin_helpers build --allow-root --skip-archive\n\nif [ ${{range.value}} = \"reportsDashboards\" ]\nthen\n  # Remove a test directory of the `resolver` package to prevent surfacing a false-positive.\n  # See https://github.com/browserify/resolve/issues/288\n  rm -r build/opensearch-dashboards/${{range.value}}/node_modules/resolve/test\nfi\n\nmkdir -p \"${{targets.contextdir}}/usr/share/opensearch-dashboards/plugins\"\ncp -r build/opensearch-dashboards/${{range.value}} \"${{targets.contextdir}}/usr/share/opensearch-dashboards/plugins/\"\n"
 update:
   enabled: true
   github:
     identifier: opensearch-project/OpenSearch-Dashboards
-    tag-filter: 2.
-
+    tag-filter: 2.0
 test:
   environment:
     contents:
@@ -170,5 +158,6 @@ test:
     environment:
       OSD_NODE_HOME: /usr
   pipeline:
-    - runs: |
-        /usr/share/opensearch-dashboards/bin/opensearch-dashboards --version --allow-root
+    - runs: '/usr/share/opensearch-dashboards/bin/opensearch-dashboards --version --allow-root
+
+      '
