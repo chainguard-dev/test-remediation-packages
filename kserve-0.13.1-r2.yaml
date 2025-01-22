@@ -55,7 +55,7 @@ subpackages:
           runs: '[ -x /ko-app/${{range.key}} -a -f /ko-app/${{range.key}} ]
 
           '
-  - name: kserve-storage-controller
+  - name: kserve-storage-controller-0.13.1-r2
     options:
       no-commands: true
     pipeline:
