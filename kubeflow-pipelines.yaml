@@ -173,9 +173,6 @@ subpackages:
         - nodejs
         - wget
     pipeline:
-      - uses: patch
-        with:
-          patches: GHSA-952p-6rrq-rcjv.patch
       - runs: |
           mkdir -p ${{targets.subpkgdir}}/server
           mkdir -p ${{targets.subpkgdir}}/client
