@@ -1,0 +1,56 @@
+package:
+  name: aws-efs-csi-driver
+  version: 2.1.2
+  epoch: 2
+  description: CSI driver for Amazon EFS.
+  copyright:
+    - license: Apache-2.0
+  dependencies:
+    runtime:
+      # Ref: https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/Dockerfile#L61-L78
+      - efs-utils # pull in nfs-utils & busybox
+      - mount
+      - openssl
+      - tcpdump
+      - umount
+
+pipeline:
+  - uses: git-checkout
+    with:
+      repository: https://github.com/kubernetes-sigs/aws-efs-csi-driver
+      tag: v${{package.version}}
+      expected-commit: 92e70c8c8b84eab383a9b990e3c78f1bb4e43d9c
+
+  - uses: go/build
+    with:
+      go-package: go
+      modroot: cmd/
+      packages: main.go
+      output: aws-efs-csi-driver
+      ldflags: |
+        -X github.com/kubernetes-sigs/aws-efs-csi-driver/pkg/driver.driverVersion=${{package.version}}
+        -X github.com/kubernetes-sigs/aws-efs-csi-driver/pkg/driver.gitCommit=$(git rev-parse HEAD)
+        -X github.com/kubernetes-sigs/aws-efs-csi-driver/pkg/driver.buildDate=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+        -X github.com/kubernetes-sigs/aws-efs-csi-driver/pkg/driver.efsClientSource=k8s
+
+  - runs: |
+      mkdir -p ${{targets.destdir}}/etc/amazon/efs
+      cp THIRD-PARTY ${{targets.destdir}}/
+      mkdir -p ${{targets.destdir}}/etc/amazon/efs-static-files
+
+  - uses: strip
+
+update:
+  enabled: true
+  ignore-regex-patterns:
+    - helm-chart-aws-efs-csi-driver
+  github:
+    identifier: kubernetes-sigs/aws-efs-csi-driver
+    strip-prefix: v
+    tag-filter: v
+
+test:
+  pipeline:
+    - runs: |
+        aws-efs-csi-driver --version
+        aws-efs-csi-driver --help
