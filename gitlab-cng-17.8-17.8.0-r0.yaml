@@ -31,7 +31,7 @@ var-transforms:
     to: major-minor-version
 
 package:
-  name: gitlab-cng-17.8
+  name: gitlab-cng-17.8-17.8.0-r0
   # ---Additional updates required--- Review 'vars' section (above), when reviewing version bumps.
   version: 17.8.0
   epoch: 0
