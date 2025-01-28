@@ -1,5 +1,5 @@
 package:
-  name: kserve
+  name: kserve-0.14.0-r2
   version: 0.14.0
   epoch: 2
   description: "Standardized Serverless ML Inference Platform on Kubernetes"
@@ -41,7 +41,6 @@ subpackages:
       - uses: go/build
         working-directory: ${{range.value}}
         with:
-          modroot: .
           packages: ./cmd/${{range.key}}
           output: ${{range.key}}
 
