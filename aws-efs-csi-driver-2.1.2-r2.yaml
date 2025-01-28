@@ -1,5 +1,5 @@
 package:
-  name: aws-efs-csi-driver
+  name: aws-efs-csi-driver-2.1.2-r2
   version: 2.1.2
   epoch: 2
   description: CSI driver for Amazon EFS.
