@@ -1,6 +1,6 @@
 package:
   name: fluent-operator
-  version: 3.2.0
+  version: fluent-operator-3.2.0-r4
   epoch: 4
   description: Operate Fluent Bit and Fluentd in the Kubernetes way - Previously known as FluentBit Operator
   copyright:
@@ -30,9 +30,8 @@ pipeline:
 
   - uses: go/build
     with:
-      modroot: ./cmd/fluent-manager
       output: manager
-      packages: .
+      packages: ./cmd/fluent-manager/main.go
 
 subpackages:
   - name: fluent-watcher
