@@ -24,9 +24,8 @@ pipeline:
 
   - uses: go/build
     with:
-      packages: .
+      packages: ./nats
       output: nats
-      modroot: nats
 
   - uses: strip
 
