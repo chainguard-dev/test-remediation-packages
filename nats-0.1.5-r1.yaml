@@ -1,5 +1,5 @@
 package:
-  name: nats
+  name: nats-0.1.5-r1
   version: 0.1.5
   epoch: 1
   description: The NATS Command Line Interface.
