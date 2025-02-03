@@ -32,5 +32,5 @@ pipeline:
       fi
 
       grep -v -E '^(#|$)' $series | (while read patchfile; do
-        patch '-p${{inputs.strip-components}}' --verbose --fuzz=2 < $patchfile
+        patch '-p${{inputs.strip-components}}' --verbose --fuzz=3 < $patchfile
       done)
