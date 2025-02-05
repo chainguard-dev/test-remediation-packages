@@ -1,0 +1,9 @@
+issuer: https://accounts.google.com
+
+# TODO staging:
+#  presubmit: 116478844699827634314: ebuild-tho0c6rsknlo655tnyjlifi@staging-enforce-cd1e.iam.gserviceaccount.com
+subject_pattern: "(116478844699827634314|115457633213442188328|118305965159726888964|114870839879105817572|118124811908286464886|100027593799559093519)"
+
+permissions:
+  contents: read
+  checks: write
