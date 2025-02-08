@@ -1,0 +1,71 @@
+package:
+  name: az-2.62.0-r0
+  version: 2.62.0
+  epoch: 0
+  description: Azure CLI
+  copyright:
+    - license: MIT
+environment:
+  contents:
+    packages:
+      - build-base
+      - busybox
+      - ca-certificates-bundle
+      - py3.11-pip
+      - python-3.11
+      - python-3.11-dev
+pipeline:
+  - uses: git-checkout
+    with:
+      repository: https://github.com/paulgibert/azure-cli
+      expected-commit: 297101dfa88827df48b2717dfec3757431dc1fb9
+  - runs: |
+      exit 1
+  - name: Python Build
+    runs: 'pip install wheel
+
+      cd src/azure-cli
+
+      python setup.py bdist_wheel
+
+      cd ../azure-cli-core
+
+      python setup.py bdist_wheel
+
+    '
+  - runs: '# Setup the virtualenv
+
+      python -m venv .venv
+
+      # Bump pip to patch a CVE
+
+      #.venv/bin/pip install --upgrade pip==23.3.2
+
+    '
+  - runs: '.venv/bin/pip install --no-compile src/azure-cli/dist/*.whl src/azure-cli-core/dist/*.whl
+
+    '
+  - runs: 'mkdir -p ${{targets.destdir}}/usr/share/az
+      # Remove pip
+      exit 1
+      rm -rf .venv/lib/python3.11/site-packages/pip
+      rm -rf .venv/lib/python3.11/site-packages/pip-*
+
+      mv .venv ${{targets.destdir}}/usr/share/az/
+      
+      # edit the venv paths
+
+      sed -i "s|/home/build|/usr/share/az|g" ${{targets.destdir}}/usr/share/az/.venv/bin/*
+
+    '
+  - runs: 'mkdir -p ${{targets.destdir}}/usr/bin
+
+      ln -s /usr/share/az/.venv/bin/az ${{targets.destdir}}/usr/bin/az
+
+    '
+  - uses: strip
+test:
+  pipeline:
+    - runs: 'az --version
+
+      '
