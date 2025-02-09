@@ -30,6 +30,10 @@ pipeline:
       tag: ${{package.version}}
       expected-commit: 4467df5f9c8242d389f20214f75fecfc4119e8cd
 
+  - uses: patch
+    with:
+      patches: 0001-Bump-dependencies.patch      
+
   - runs: |
       ln -sf /usr/bin/python3.10 /usr/bin/python3
       mkdir -p ${{targets.destdir}}/usr/share/app
