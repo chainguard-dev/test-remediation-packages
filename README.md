@@ -4,7 +4,7 @@ Each directory contains a list of files which are required to build the listed A
 information on how to fix its detected CVEs for these APKs.
 
 
-To fix these CVEs, we have used the following CLI:
+To fix these CVEs, we use the following CLI:
 
 ```bash
 Usage:
