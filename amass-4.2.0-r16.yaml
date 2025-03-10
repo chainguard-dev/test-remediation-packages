@@ -1,7 +1,7 @@
 package:
   name: amass-4.2.0-r16
   version: 4.2.0
-  epoch: 16
+  epoch: 17
   description: "attack surfaces and external asset discovery tools set"
   copyright:
     - license: Apache-2.0
