@@ -1,5 +1,5 @@
 package:
-  name: az-2.62.0-r0
+  name: az
   version: 2.62.0
   epoch: 0
   description: Azure CLI
