@@ -1,0 +1,6 @@
+--- a/Gemfile.template
++++ b/Gemfile.template
+@@ -42,3 +43,4 @@ gem "murmurhash3", "= 0.1.6" # Pins until version 0.1.7-java is released
+ gem "thwait"
+ gem "bigdecimal", "~> 3.1"
++gem "net-imap", ">= 0.4.19" # Added to address GHSA-7fc5-f82f-cx69
