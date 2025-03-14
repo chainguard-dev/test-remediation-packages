@@ -1,0 +1,4 @@
+--- a/image/Gemfile
++++ b/image/Gemfile
+@@ -52,0 +53 @@
++gem 'net-imap', '0.3.8'
