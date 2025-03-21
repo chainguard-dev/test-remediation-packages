@@ -1,7 +1,7 @@
 package:
   name: cert-exporter-2.14.0-r3
   version: 2.14.0
-  epoch: 3
+  epoch: 100
   description: A Prometheus exporter that publishes cert expirations on disk and in Kubernetes secrets
   copyright:
     - license: Apache-2.0
