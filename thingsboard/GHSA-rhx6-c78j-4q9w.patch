@@ -1,0 +1,23 @@
+--- a/ui-ngx/package.json
++++ b/ui-ngx/package.json
+@@ -175,4 +175,5 @@
+     "rc-virtual-list": "3.4.13",
+     "read-package-json": "6.0.0",
+     "cacache": "17.0.4"
++    ,"path-to-regexp": "0.1.12"
+   }
+--- a/msa/js-executor/package.json
++++ b/msa/js-executor/package.json
+@@ -58,3 +58,4 @@
+     "color-string": "^1.5.5",
+     "minimist": "^1.2.6",
+     "node-fetch": "^2.6.7"
++    ,"path-to-regexp": "0.1.12"
+   }
+--- a/msa/web-ui/package.json
++++ b/msa/web-ui/package.json
+@@ -54,3 +54,4 @@
+     "follow-redirects": "^1.14.8",
+     "minimist": "^1.2.6"
++    ,"path-to-regexp": "0.1.12"
+   }
