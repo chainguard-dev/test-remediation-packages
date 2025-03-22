@@ -1,0 +1,5 @@
+--- a/frontend/package.json
++++ b/frontend/package.json
+@@ -153,1 +154,2 @@
+     "workbox-webpack-plugin": "6.6.0",
++    "path-to-regexp": "0.1.12"
