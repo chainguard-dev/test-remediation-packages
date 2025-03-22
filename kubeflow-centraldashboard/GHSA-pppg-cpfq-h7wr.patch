@@ -1,0 +1,5 @@
+--- a/components/centraldashboard/package.json
++++ b/components/centraldashboard/package.json
+@@ -136,1 +136,2 @@
+             "pug": "^3.0.1"
++            ,"jsonpath-plus": "^10.2.0"
