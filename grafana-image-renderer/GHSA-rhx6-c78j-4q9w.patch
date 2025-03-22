@@ -1,0 +1,6 @@
+--- a/package.json
++++ b/package.json
+@@ -77,1 +77,2 @@
+   "resolutions": {
++    "path-to-regexp": "0.1.12",
+     "xml2js": "^0.6.2"
