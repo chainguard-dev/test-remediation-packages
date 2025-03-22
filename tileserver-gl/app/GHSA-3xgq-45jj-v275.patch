@@ -1,0 +1,8 @@
+--- a/package.json
++++ b/package.json
+@@ -83,1 +84,4 @@
+   "homepage": "https://github.com/maptiler/tileserver-gl#readme"
++,
++  "overrides": {
++    "cross-spawn": "7.0.5"
++  }
