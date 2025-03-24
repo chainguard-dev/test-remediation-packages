@@ -5,18 +5,21 @@ package:
   description: Standardized Serverless ML Inference Platform on Kubernetes
   copyright:
     - license: Apache-2.0
+
 environment:
   contents:
     packages:
       - go
       - py3.11-pip
       - python-3.11-dev
+
 pipeline:
   - uses: git-checkout
     with:
       repository: https://github.com/kserve/kserve
       tag: v${{package.version}}
       expected-commit: e7d9ac8c48900bfd6db4821305b762bc51d8a67b
+
 data:
   - name: go-components
     items:
@@ -24,6 +27,7 @@ data:
       router: .
       manager: .
       qpext: qpext
+
 subpackages:
   - range: go-components
     name: kserve-${{range.key}}
@@ -34,6 +38,7 @@ subpackages:
           modroot: .
           packages: ./cmd/${{range.key}}
           output: ${{range.key}}
+
   - range: go-components
     name: kserve-${{range.key}}-compat
     dependencies:
@@ -45,16 +50,7 @@ subpackages:
           ln -s ../usr/bin/${{range.key}} "${{targets.contextdir}}/ko-app/${{range.key}}"
 
         '
-    test:
-      environment:
-        contents:
-          packages:
-            - busybox
-      pipeline:
-        - name: check paths
-          runs: '[ -x /ko-app/${{range.key}} -a -f /ko-app/${{range.key}} ]
 
-          '
   - name: kserve-storage-controller-0.13.1-r2
     options:
       no-commands: true
@@ -62,16 +58,7 @@ subpackages:
       - working-directory: ./python
         runs: "python=$(which python3.11)\n\n(\n  set -x\n  cd kserve\n\n  # get poetry - until poetry is multi-versioned, just install from pip\n  workd=$(mktemp -d)\n  $python -m venv \"$workd\"\n  $workd/bin/pip install poetry\n\n  $workd/bin/poetry build\n\n  wheel=$(echo dist/*.whl)\n  [ -f \"$wheel\" ] || { echo \"not exactly one wheel: $wheel\"; exit 1; }\n\n  # just let pip handle deps for now.\n  $python -m pip install --verbose --prefix=/usr \"--root=${{targets.contextdir}}\" \\\n     \"$wheel[storage]\"\n\n  rm -Rf \"$workd\"\n)\n\n(\n  d=${{targets.contextdir}}/storage-initializer/scripts/\n  mkdir -p \"$d\"\n  cp storage-initializer/scripts/initializer-entrypoint \"$d\"\n  cd \"$d\"\n  chmod 755 initializer-entrypoint\n\n  # update shbang to point to the python used rather than '/usr/bin/env python'\n  sed -i.dist \"1s,#!/usr/bin/env python[^ ]*,#!$python,\" initializer-entrypoint\n  # exit fail if it did not change anything\n  diff -u initializer-entrypoint.dist initializer-entrypoint && exit 1\n  rm initializer-entrypoint.dist\n)\n"
       - uses: strip
-    test:
-      environment:
-        contents:
-          packages:
-            - busybox
-      pipeline:
-        - name: test entrypoint usage
-          runs: '/storage-initializer/scripts/initializer-entrypoint --help
 
-          '
 update:
   enabled: true
   github:

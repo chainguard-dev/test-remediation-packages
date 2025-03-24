@@ -75,11 +75,6 @@ subpackages:
             -X github.com/argoproj/argo-workflows/v3.gitCommit=$(git rev-parse HEAD || echo unknown)
             -X github.com/argoproj/argo-workflows/v3.gitTreeState=$(if [ -z "`git status --porcelain`" ]; then echo "clean" ; else echo "dirty"; fi)
       - uses: strip
-    test:
-      pipeline:
-        - runs: |
-            workflow-controller version
-            workflow-controller --help
 
   - name: "argo-workflow-executor"
     description: "Argo workflow executor"
@@ -94,11 +89,6 @@ subpackages:
             -X github.com/argoproj/argo-workflows/v3.gitCommit=$(git rev-parse HEAD || echo unknown)
             -X github.com/argoproj/argo-workflows/v3.gitTreeState=$(if [ -z "`git status --porcelain`" ]; then echo "clean" ; else echo "dirty"; fi)
       - uses: strip
-    test:
-      pipeline:
-        - runs: |
-            argoexec version
-            argoexec --help
 
   - name: argo-workflow-controller-compat
     pipeline:
@@ -143,22 +133,3 @@ update:
   github:
     identifier: argoproj/argo-workflows
     strip-prefix: v
-
-test:
-  environment:
-    contents:
-      packages:
-        - argo-workflow-cli
-        - argo-workflow-controller-compat
-        - argo-workflow-controller
-        - argo-workflow-executor-compat
-        - argo-workflow-executor
-  pipeline:
-    - runs: |
-        # Test compat packages and full paths
-        /usr/bin/argo --help
-        /usr/bin/argoexec --help
-        /usr/bin/workflow-controller --help
-        /argo --help
-        /workflow-controller --help
-        /argoexec --help

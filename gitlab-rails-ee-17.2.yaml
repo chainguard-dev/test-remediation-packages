@@ -40,6 +40,7 @@ environment:
       - cmake
       - git
       - glibc-dev
+      - go
       - icu-dev
       - krb5-dev
       - libffi-dev
@@ -55,7 +56,6 @@ environment:
       - tzdata
       - yarn
       - zlib-dev
-      - go
   environment:
     CC: clang
     CXX: clang++

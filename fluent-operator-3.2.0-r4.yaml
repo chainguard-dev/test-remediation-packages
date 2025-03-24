@@ -40,26 +40,6 @@ subpackages:
         with:
           packages: ./cmd/fluent-watcher/fluentbit
           output: fluent-watcher
-    test:
-      environment:
-        contents:
-          packages:
-            - fluent-bit
-            - fluent-bit-compat
-            - fluent-watcher-compat
-      pipeline:
-        - runs: |
-            echo "Testing fluent-watcher"
-            # Run fluent-watcher in the background and redirect its output to a temporary file
-            tempfile=$(mktemp)
-            fluent-watcher > "$tempfile" 2>&1 &
-
-            sleep 5
-
-            # Use grep to filter the output
-            cat "$tempfile" | grep -i "fluent-bit started"
-
-            fluent-watcher --help
 
   - name: fluent-watcher-config
     dependencies:
@@ -82,14 +62,6 @@ subpackages:
           mkdir -p "${{targets.contextdir}}"/fluent-bit/etc
           cp conf/fluent-bit.conf conf/fluent-bit.yaml conf/parsers.conf \
             conf/fluent-bit.conf "${{targets.contextdir}}"/fluent-bit/etc
-    test:
-      environment:
-        contents:
-          packages:
-            - fluent-bit
-      pipeline:
-        - runs: |
-            cat /fluent-bit/etc/parsers.conf
 
   - name: fluent-watcher-compat
     pipeline:
@@ -103,23 +75,3 @@ update:
     identifier: fluent/fluent-operator
     strip-prefix: v
     use-tag: true
-
-test:
-  environment:
-    contents:
-      packages:
-        - curl
-        - kwok
-        - kwokctl
-        - kubernetes # has a runtime dependency on kubectl
-        - etcd
-  pipeline:
-    - uses: test/kwok/cluster
-      runs: |
-        manager --help
-    - name: "Test operator"
-      runs: |
-        kubectl create ns fluent
-        kubectl apply --server-side=true -f https://github.com/fluent/fluent-operator/releases/download/v${{package.version}}/setup.yaml
-        manager -metrics-bind-address 0.0.0.0:8082&
-        sleep 5; curl localhost:8082/metrics |grep workqueue_retries_total

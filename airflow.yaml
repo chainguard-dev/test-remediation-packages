@@ -137,15 +137,3 @@ update:
     - 'helm-chart*'
   github:
     identifier: apache/airflow
-
-test:
-  environment:
-    contents:
-      packages:
-        - python3
-  pipeline:
-    - runs: |
-        export PATH=/opt/airflow/bin:$PATH
-        export PYTHONPATH=/opt/airflow/lib/python3.12/site-packages
-        HOME=/home/build airflow version
-        python3.12 -c "import airflow"

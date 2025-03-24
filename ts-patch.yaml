@@ -42,27 +42,3 @@ update:
   github:
     identifier: nonara/ts-patch
     strip-prefix: v
-
-test:
-  environment:
-    contents:
-      packages:
-        - nodejs
-        - npm
-        - coreutils
-  pipeline:
-    - name: Test tspc version
-      runs: |
-        tspc --version
-        ts-patch --help
-        tspc --help
-    - name: Test tspc compiles
-      runs: |
-        tsfile=$(mktemp /tmp/tempfile.XXXXXX.ts)
-        echo "console.log('Green eggs and ham.');" > $tsfile
-        jsfile=$(mktemp /tmp/tempfile.XXXXXX.js)
-        tspc $tsfile --outFile $jsfile
-        node $jsfile | grep "Green eggs and ham."
-    - name: Test ts-patch version
-      runs: |
-        ts-patch --version

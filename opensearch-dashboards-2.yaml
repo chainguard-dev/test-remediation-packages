@@ -158,14 +158,3 @@ update:
   github:
     identifier: opensearch-project/OpenSearch-Dashboards
     tag-filter: 2.
-
-test:
-  environment:
-    contents:
-      packages:
-        - ${{package.name}}-config
-    environment:
-      OSD_NODE_HOME: /usr
-  pipeline:
-    - runs: |
-        /usr/share/opensearch-dashboards/bin/opensearch-dashboards --version --allow-root

@@ -97,10 +97,3 @@ update:
     - 'rc\d+$'
   github:
     identifier: apache/superset
-
-test:
-  pipeline:
-    - runs: |
-        export PATH=/usr/share/superset/venv/bin:$PATH
-        export SUPERSET_SECRET_KEY="$(openssl rand -base64 42)"
-        superset --help

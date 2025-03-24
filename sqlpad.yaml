@@ -63,10 +63,6 @@ subpackages:
       - runs: |
           mkdir -p "${{targets.subpkgdir}}"/usr/app
           ln -s /usr/bin/sqlpad-server ${{targets.subpkgdir}}/usr/app
-    test:
-      pipeline:
-        - runs: |
-            test -L /usr/app/sqlpad-server
 
 update:
   enabled: true

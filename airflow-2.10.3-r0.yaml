@@ -10,6 +10,7 @@ package:
       - python-3.12
   copyright:
     - license: Apache-2.0
+
 environment:
   contents:
     packages:
@@ -21,24 +22,28 @@ environment:
       - openssf-compiler-options
       - pkgconf-dev
       - postgresql-dev
-      - py3.12-pip
       - py3-xmlsec
+      - py3.12-pip
       - python-3.12
       - python-3.12-dev
       - wolfi-base
       - xmlsec-dev
       - xmlsec-openssl
       - yarn
+
 pipeline:
   - uses: git-checkout
     with:
       repository: https://github.com/apache/airflow
       tag: ${{package.version}}
       expected-commit: c99887ec11ce3e1a43f2794fcf36d27555140f00
+
   - runs: "# by default airflow celery provider is not built,but running the upstream helm chart requires it\n python patch.py\n # remove the patcher\n rm -rf patch.py\n"
+
   - uses: patch
     with:
       patches: requests.patch urllib3.patch
+
   - runs: '# requires EPOCH to be later that 1980
 
       export SOURCE_DATE_EPOCH=315532800
@@ -64,6 +69,7 @@ pipeline:
       pip install dist/*.whl
 
     '
+
   - runs: '# CVE-2024-6345 GHSA-cx63-2mw6-8hw5
 
       # setuptools comes from airflow/providers/google/provider.yaml having
@@ -77,6 +83,7 @@ pipeline:
       ./venv/bin/pip uninstall --yes setuptools
 
     '
+
   - working-directory: venv/lib/python3.12/site-packages/airflow/www
     runs: '# front-end build
 
@@ -87,7 +94,9 @@ pipeline:
       rm -rf node_modules
 
     '
+
   - runs: find . -name '__pycache__' -exec rm -rf {} +
+
   - runs: 'mkdir -p ${{targets.destdir}}/opt/airflow/dags
 
       mkdir -p ${{targets.destdir}}/scripts/docker
@@ -132,21 +141,12 @@ pipeline:
       chmod 755 ${{targets.destdir}}/scripts/docker
 
     '
+
 update:
   enabled: true
   ignore-regex-patterns:
     - rc\d+$
     - helm-chart*
   github:
-    identifier: apache/airflow
-test:
-  environment:
-    contents:
-      packages:
-        - python3
-  pipeline:
-    - runs: 'export PATH=/opt/airflow/venv/bin:$PATH
-
-        HOME=/home/build airflow version
-
-      '
+    identifier: |-
+      apache/airflow

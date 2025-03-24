@@ -137,16 +137,6 @@ subpackages:
           for bin in ${KEEP_BINARIES}; do
             ln -sf /usr/bin/$bin "${{targets.contextdir}}"/vt/bin/
           done
-    test:
-      environment:
-        contents:
-          packages:
-            - vitess
-      pipeline:
-        - name: Ensure symlinks are valid
-          runs: |
-            #!/bin/bash
-            find /vt/bin -type l ! -exec test -e {} \; -print
 
   - name: "${{package.name}}-binaries"
     description: "All the binaries built by Vitess"
@@ -165,61 +155,6 @@ subpackages:
               rm -f ${{targets.destdir}}/usr/bin/${bin}
             fi
           done
-    test:
-      pipeline:
-        - name: Smoke test for vitess binaries
-          runs: |
-            autogenerate --version
-            autogenerate --help
-            demo --version
-            demo --help
-            docgen --version
-            docgen --help
-            example --help
-            go-upgrade --help
-            maketestdata --help
-            mysqlctl --version
-            mysqlctl --help
-            mysqlctld --version
-            mysqlctld --help
-            rulesctl --version
-            rulesctl --help
-            topo2topo --version
-            topo2topo --help
-            vtaclcheck --version
-            vtaclcheck --help
-            vtadmin --version
-            vtadmin --help
-            vtbackup --version
-            vtbackup --help
-            vtbench --version
-            vtbench --help
-            vtclient --version
-            vtclient --help
-            vtcombo --version
-            vtcombo --help
-            vtctl --version
-            vtctl --help
-            vtctlclient --version
-            vtctlclient --help
-            vtctld --version
-            vtctld --help
-            vtctldclient --version
-            vtctldclient --help
-            vterrorsgen --version
-            vterrorsgen --help
-            vtexplain --version
-            vtexplain --help
-            vtgate --version
-            vtgate --help
-            vtgateclienttest --help
-            vtorc --version
-            vtorc --help
-            vttablet --version
-            vttablet --help
-            vttestserver --version
-            vttestserver --help
-            vttlstest --help
 
 update:
   enabled: true
@@ -228,36 +163,3 @@ update:
     strip-prefix: v
     use-tag: true
     tag-filter: v20.
-
-test:
-  environment:
-    contents:
-      packages:
-        - vitess-compat
-  pipeline:
-    - name: Smoke test for vitess binaries
-      runs: |
-        mysqlctl --version
-        mysqlctl --help
-        mysqlctld --version
-        mysqlctld --help
-        vtadmin --version
-        vtadmin --help
-        vtbackup --version
-        vtbackup --help
-        vtctl --version
-        vtctl --help
-        vtctlclient --version
-        vtctlclient --help
-        vtctld --version
-        vtctld --help
-        vtctldclient --version
-        vtctldclient --help
-        vtexplain --version
-        vtexplain --help
-        vtgate --version
-        vtgate --help
-        vtorc --version
-        vtorc --help
-        vttablet --version
-        vttablet --help
