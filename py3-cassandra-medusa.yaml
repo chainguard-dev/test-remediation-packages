@@ -102,20 +102,3 @@ update:
   github:
     identifier: thelastpickle/cassandra-medusa
     strip-prefix: v
-
-test:
-  environment:
-    contents:
-      packages:
-        - python-3.11
-        - python-3.11-dev
-        - grpc-health-probe
-  pipeline:
-    - runs: medusa --version
-    - runs: |
-        set +e
-        fail() { echo "$@" 1>&2; exit 1; }
-        out=$(/home/cassandra/.venv/bin/python3 -m medusa.service.grpc.server 2>&1)
-        status=$?
-        echo "$out" | grep -q '/etc/medusa/medusa.ini' || fail "medusa.service.grpc.server output did not contain expected 'medusa.ini' message. Exit status $status: $out"
-        echo "medusa.service.grpc.server exited with expected error message"

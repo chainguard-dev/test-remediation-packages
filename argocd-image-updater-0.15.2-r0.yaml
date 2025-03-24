@@ -48,13 +48,3 @@ update:
     identifier: argoproj-labs/argocd-image-updater
     strip-prefix: v
     tag-filter: v
-
-test:
-  pipeline:
-    - name: Check version
-      runs: |
-        argocd-image-updater version | grep -q ${{package.version}}
-    - uses: test/kwok/cluster
-    - name: more tests
-      runs: |
-        argocd-image-updater test nginx

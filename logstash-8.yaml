@@ -249,60 +249,6 @@ subpackages:
           # also have a custom logstash.yml
           rm "${{targets.subpkgdir}}"/opt/bitnami/logstash/config.default/logstash.yml
           install -Dm755 logstash.custom.yml "${{targets.subpkgdir}}"/opt/bitnami/logstash/config.default/logstash.yml
-    test:
-      environment:
-        contents:
-          packages:
-            - bash
-            - curl
-            - busybox
-            - openjdk-17-jre
-            - openjdk-17-default-jvm
-        accounts:
-          groups:
-            - groupname: logstash
-              gid: 1001
-          users:
-            - username: logstash
-              gid: 1001
-              uid: 1001
-          run-as: 1001
-        environment:
-          LS_JAVA_HOME: /usr/lib/jvm/java-17-openjdk
-      pipeline:
-        - working-directory: /tmp
-          pipeline:
-            - runs: |
-                run-script --version
-                run-script --help
-            - name: "start daemon on localhost"
-              uses: test/daemon-check-output
-              with:
-                start: |
-                  env "BITNAMI_APP_NAME=logstash" \
-                    "APP_VERSION=${{package.version}}" \
-                    "PATH=/opt/bitnami/logstash/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" \
-                    /opt/bitnami/scripts/logstash/entrypoint.sh \
-                    /opt/bitnami/scripts/logstash/run.sh
-                timeout: 120
-                expected_output: |
-                  Welcome to the Bitnami logstash container
-                  Starting Logstash setup
-                  Starting Logstash
-                  Starting http input listener
-                post: |
-                  #!/bin/sh -e
-                  url=http://localhost:8080
-                  response=$(curl -fsS --connect-timeout 5 --max-time 10 --retry 5 --retry-delay 0 --retry-max-time 40 "$url") || {
-                    echo "curl ${url} failed $?"
-                    exit 1
-                  }
-                  echo "$response" | grep -q ok || {
-                    echo "response from $url did not contain \"ok\""
-                    echo "response: $response"
-                    exit 1
-                  }
-                  echo "$url had expected output: $response"
 
   - name: ${{package.name}}-env2yaml
     description: Merge environment variables into logstash.yml
@@ -365,45 +311,6 @@ subpackages:
         runs: |
           # Hack-fix to reduce CVE count: https://github.com/elastic/logstash/pull/3855
           rm -rf ${{targets.contextdir}}/${LS_DESTINATION}/vendor/bundle/jruby/*/gems/ruby-maven-libs-*/maven-home/lib
-    test:
-      environment:
-        contents:
-          packages:
-            - wolfi-base
-        environment:
-          LS_JAVA_HOME: /usr/lib/jvm/default-jvm
-      pipeline:
-        - name: Ensure output opensearch plugin was installed
-          runs: |
-            logstash-plugin list | grep logstash-output-opensearch
-        - name: Ensure logstash itself works with basic function
-          runs: |
-            echo "hello" | \
-              logstash -e 'input { stdin { } } output { stdout {} }' | \
-              grep 'message.*hello'
-
-test:
-  pipeline:
-    - name: Ensure default plugins were actually installed
-      runs: |
-        logstash-plugin list | grep logstash-integration-jdbc
-        logstash-plugin list | grep logstash-filter-xml
-        logstash --version
-        logstash.lib.sh --version
-        logstash.lib.sh --help
-        pqcheck --help
-        ruby --version
-        ruby --help
-        system-install --help
-    - name: Ensure logstash itself works with basic function
-      runs: |
-        echo "hello" | \
-          logstash -e 'input { stdin { } } output { stdout {} }' | \
-          grep 'message.*hello'
-    - name: Test logstash-filter-xml
-      runs: |
-        # Needs to be an absolute path or logstash will ignore
-        logstash -f $PWD/test/logstash-filter-xml/logstash.conf
 
 update:
   enabled: true

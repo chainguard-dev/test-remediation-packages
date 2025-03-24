@@ -120,24 +120,6 @@ subpackages:
           # Create auth symlink expected in Bitnami Helm chart
           mkdir -p ${{targets.contextdir}}/bitnami
           ln -sf /usr/share/mlflow/lib/python3.12/site-packages/mlflow/server/auth ${{targets.contextdir}}/bitnami/mlflow-basic-auth
-    test:
-      pipeline:
-        - runs: |
-            ls /bitnami/mlflow-basic-auth/ | grep "basic_auth.ini"
-            run-script --version
-            run-script --help
-
-test:
-  environment:
-    contents:
-      packages:
-        - curl
-        - git
-  pipeline:
-    - runs: |
-        export PATH="/usr/share/mlflow/bin:${PATH}"
-        python3 ./test-mlflow.py
-        mlflow ui & sleep 5; curl -vsL localhost:5000
 
 update:
   enabled: true

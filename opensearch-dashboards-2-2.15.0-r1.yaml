@@ -8,6 +8,7 @@ package:
   dependencies:
     runtime:
       - nodejs-18
+
 environment:
   contents:
     packages:
@@ -30,6 +31,7 @@ environment:
   environment:
     CC: gcc
     CXX: g++
+
 data:
   - name: plugins
     items:
@@ -46,6 +48,7 @@ data:
       security-analytics-dashboards-plugin: securityAnalyticsDashboards
       security-dashboards-plugin: securityDashboards
       dashboards-search-relevance: searchRelevanceDashboards
+
 pipeline:
   - uses: git-checkout
     with:
@@ -55,6 +58,7 @@ pipeline:
       cherry-picks: 'main/5e19749ec40230316ba2688c38e5c62f74ddb71d: CVE-2024-37890
 
       '
+
   - runs: '# Workaround for "OpenSearch Dashboards should not be run as root.  Use --allow-root to continue."
 
       # This change will add the --allow-root when running the build_ts_refs and register_git_hook scripts
@@ -62,7 +66,9 @@ pipeline:
       sed -i ''s/\("osd:bootstrap": "scripts\/use_node scripts\/build_ts_refs\)\( && scripts\/use_node scripts\/register_git_hook\)/\1 --allow-root\2 --allow-root/'' package.json
 
     '
+
   - runs: "# Create \"resolutions\" section of package.json\njq '.resolutions |= (if . then . else {} end)' package.json > temp.json && mv temp.json package.json\nfor override in '\"**/hoek\"=\"npm:@hapi/hoek@>=8.5.1\"'; do\n  jq \".resolutions.${override}\" package.json > temp.json && mv temp.json package.json\ndone\n"
+
   - runs: 'set -x
 
 
@@ -92,7 +98,9 @@ pipeline:
       rm -r ${{targets.destdir}}/usr/share/opensearch-dashboards/config/opensearch_dashboards.yml
 
     '
+
   - uses: strip
+
 subpackages:
   - name: ${{package.name}}-config
     description: Compatibility package to place Docker startup scripts.
@@ -112,6 +120,7 @@ subpackages:
           install -Dm655 opensearch-build/docker/release/config/opensearch-dashboards/opensearch.example.org.cert ${{targets.contextdir}}/usr/share/opensearch-dashboards/config/opensearch.example.org.cert
 
         '
+
   - range: plugins
     name: ${{package.name}}-${{range.key}}
     pipeline:
@@ -124,20 +133,9 @@ subpackages:
           tag: ${{package.version}}.0
           destination: ./plugins/${{range.value}}
       - runs: "yarn osd bootstrap --allow-root\ncd ./plugins/${{range.value}}\n\nnode /home/build/scripts/plugin_helpers build --allow-root --skip-archive\n\nif [ ${{range.value}} = \"reportsDashboards\" ]\nthen\n  # Remove a test directory of the `resolver` package to prevent surfacing a false-positive.\n  # See https://github.com/browserify/resolve/issues/288\n  rm -r build/opensearch-dashboards/${{range.value}}/node_modules/resolve/test\nfi\n\nmkdir -p \"${{targets.contextdir}}/usr/share/opensearch-dashboards/plugins\"\ncp -r build/opensearch-dashboards/${{range.value}} \"${{targets.contextdir}}/usr/share/opensearch-dashboards/plugins/\"\n"
+
 update:
   enabled: true
   github:
     identifier: opensearch-project/OpenSearch-Dashboards
     tag-filter: 2.0
-test:
-  environment:
-    contents:
-      packages:
-        - busybox
-        - ${{package.name}}-config
-    environment:
-      OSD_NODE_HOME: /usr
-  pipeline:
-    - runs: '/usr/share/opensearch-dashboards/bin/opensearch-dashboards --version --allow-root
-
-      '

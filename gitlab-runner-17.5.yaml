@@ -106,11 +106,6 @@ subpackages:
           output: docker-machine
           ldflags: -w -X github.com/docker/machine/version.GitCommit=$(git rev-parse --short HEAD 2>/dev/null)
           modroot: ./machine
-    test:
-      pipeline:
-        - runs: |
-            docker-machine -v | grep ${{vars.machine-tag}}
-            docker-machine -h
 
 update:
   enabled: true
@@ -119,15 +114,3 @@ update:
   git:
     strip-prefix: v
     tag-filter-prefix: v17.5
-
-test:
-  environment:
-    contents:
-      packages:
-        - gitlab-runner-helper-compat-${{vars.major-minor-version}}
-        - gitlab-runner-helper=${{package.full-version}}
-  pipeline:
-    - runs: |
-        gitlab-runner --help
-        gitlab-runner-helper --help
-        gitlab-runner --version

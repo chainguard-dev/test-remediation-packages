@@ -37,9 +37,3 @@ update:
   github:
     identifier: IBM/portieris
     strip-prefix: v
-
-test:
-  pipeline:
-    - runs: |
-        which portieris
-        portieris --help

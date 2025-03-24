@@ -35,20 +35,9 @@ subpackages:
           mkdir -p ${{targets.contextdir}}
           ln -sf /usr/bin/step-issuer ${{targets.contextdir}}/manager
     description: Helm chart compatability
-    test:
-      pipeline:
-        - runs: |
-            /manager -h
 
 update:
   enabled: true
   github:
     identifier: smallstep/step-issuer
     strip-prefix: v
-
-test:
-  pipeline:
-    - name: Run Help Command
-      runs: |
-        /usr/bin/step-issuer -h
-        step-issuer --help

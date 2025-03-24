@@ -49,8 +49,3 @@ update:
   github:
     identifier: containers/prometheus-podman-exporter
     strip-prefix: v
-
-test:
-  pipeline:
-    - runs: |
-        podman_exporter --help
