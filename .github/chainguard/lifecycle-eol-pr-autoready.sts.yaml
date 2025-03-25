@@ -1,0 +1,9 @@
+issuer: https://accounts.google.com
+
+# eol-pr-autoready@staging-enforce-cd1e.iam.gserviceaccount.com
+subject_pattern: "(105215675729868253483)"
+
+permissions:
+  pull_requests: write
+  contents: read
+  checks: read
