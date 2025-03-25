@@ -1,0 +1,5 @@
+--- a/image/Gemfile
++++ b/image/Gemfile
+@@ -5 +5,2 @@ gem "fluentd", "1.16.1"
+ 
++gem 'rack', '3.0.12'
