@@ -1,0 +1,5 @@
+--- a/logstash-core/logstash-core.gemspec
++++ b/logstash-core/logstash-core.gemspec
+@@ -35 @@
+-  gem.add_runtime_dependency "sinatra", "~> 4.0"
++  gem.add_runtime_dependency "sinatra", "~> 4.1"
