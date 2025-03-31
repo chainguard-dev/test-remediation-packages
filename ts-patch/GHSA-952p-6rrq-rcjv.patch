@@ -1,0 +1,8 @@
+--- a/package.json
++++ b/package.json
+@@ -157,1 +157,4 @@
+   }
++,
++  "overrides": {
++    "micromatch": "4.0.8"
++  }
