@@ -1,0 +1,5 @@
+--- a/ui-ngx/package.json
++++ b/ui-ngx/package.json
+@@ -177,1 +178,2 @@
+     "cacache": "17.0.4"
++    ,"path-to-regexp": "0.1.12"
