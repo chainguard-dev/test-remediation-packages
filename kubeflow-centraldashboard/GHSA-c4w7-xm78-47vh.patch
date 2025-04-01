@@ -1,0 +1,9 @@
+--- a/components/centraldashboard/package.json
++++ b/components/centraldashboard/package.json
+@@ -133 +133,2 @@
+-    "overrides": {
++    "overrides": {
++        "y18n": "^4.0.1",
+@@ -136 +137 @@
+-        }
++        }
