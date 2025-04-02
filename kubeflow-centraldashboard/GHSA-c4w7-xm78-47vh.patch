@@ -1,0 +1,10 @@
+--- a/components/centraldashboard/package.json
++++ b/components/centraldashboard/package.json
+@@ -133,5 +133,6 @@
+     "overrides": {
+         "pug-loader": {
+             "pug": "^3.0.1"
+-        }
++        },
++        "y18n": "^4.0.1"
+     }
