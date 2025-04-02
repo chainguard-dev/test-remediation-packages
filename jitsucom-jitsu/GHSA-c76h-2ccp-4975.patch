@@ -1,0 +1,4 @@
+--- a/package.json
++++ b/package.json
+@@ -56,0 +57,1 @@
++      "undici": "^6.21.1",
