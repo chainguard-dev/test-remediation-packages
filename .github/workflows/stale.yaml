@@ -1,0 +1,34 @@
+name: 'Close stale'
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  stale:
+    # These are the permissions recommended by github.
+    permissions:
+      pull-requests: write
+
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@0080882f6c36860b6ba35c610c98ce87d4e2f26f # v2.10.2
+        with:
+          egress-policy: audit
+
+      - uses: actions/stale@28ca1036281a5e5922ead5184a1bbf96e5fc984e # v9.0.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+          stale-pr-message: |-
+            This Pull Request is stale because it has been open for 1 day with
+            no activity. It will automatically close after 1 more day of
+            inactivity. Keep fresh with the 'lifecycle/frozen' label.
+          stale-pr-label: 'request-cve-remediation'
+          exempt-pr-labels: 'lifecycle/frozen'
+          days-before-stale: 1
+          days-before-close: 1
