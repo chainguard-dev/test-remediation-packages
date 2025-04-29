@@ -71,7 +71,7 @@ pipeline:
       # requires EPOCH to be later that 1980
       export SOURCE_DATE_EPOCH=315532800
 
-      # To install mysqlclient wheel
+      # To install mysqlclient wheel.
       export MYSQLCLIENT_CFLAGS=`mysql_config --cflags`
       export MYSQLCLIENT_CFLAGS=`mysql_config --cflags`
 
