@@ -17,7 +17,7 @@ package:
       - mount
       - runc
       - umount
-      # Do not include runtime dependencies already included in the multicall k3s
+      # Do not include runtime dependencies already included in the multicall k3s.
       # - ctr
       # - crictl
       # - containerd
