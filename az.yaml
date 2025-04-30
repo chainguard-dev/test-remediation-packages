@@ -42,7 +42,7 @@ pipeline:
 
       python -m venv .venv
 
-      # Bump pip to patch a CVE
+      # Bump pip to patch a vulnerability
 
       #.venv/bin/pip install --upgrade pip==23.3.2
 
