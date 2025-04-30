@@ -1,4 +1,4 @@
-This is a Wolfi packages repository for testing our CVE remediation service.
+This is a Wolfi packages repository for testing our CVE remediation service
 
 Each directory contains a list of files which are required to build the listed APKs and a README file with
 information on how to fix its detected CVEs for these APKs.
