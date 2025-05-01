@@ -1,0 +1,5 @@
+--- a/requirements/base.txt
++++ b/requirements/base.txt
+@@ -402,1 +402,1 @@ zipp==3.19.0
+-zipp==3.19.0
++zipp==3.19.1
