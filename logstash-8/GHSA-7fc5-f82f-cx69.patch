@@ -1,0 +1,5 @@
+--- a/Gemfile.template
++++ b/Gemfile.template
+@@ -26 +26,2 @@
+ gem "fileutils", "~> 1.7"
++gem "net-imap", ">= 0.4.19"
