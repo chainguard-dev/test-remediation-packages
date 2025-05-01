@@ -1,0 +1,4 @@
+--- a/Gemfile.template
++++ b/Gemfile.template
+@@ -43,0 +44,1 @@
++gem "rexml", "= 3.3.9" # Pin to address vulnerability GHSA-2rxp-v6pw-ch6m
