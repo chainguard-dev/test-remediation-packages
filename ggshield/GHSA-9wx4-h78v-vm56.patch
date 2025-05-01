@@ -1,0 +1,6 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -39,0 +40,2 @@ md_header_level = "2"
++
++[tool.poetry.dependencies]
++requests = "2.32.3"
