@@ -1,0 +1,5 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ -49,1 +49,2 @@
+ gem 'gelf', "3.1.0"
++gem 'google-protobuf', '3.25.5'
