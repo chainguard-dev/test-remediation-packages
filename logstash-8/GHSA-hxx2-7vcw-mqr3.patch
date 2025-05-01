@@ -1,0 +1,5 @@
+--- a/Gemfile.template
++++ b/Gemfile.template
+@@ -38 +38,2 @@
+ gem "simplecov", "~> 0.22.0", :group => :development
++gem "sinatra", "~> 4.1.0", :group => :development
