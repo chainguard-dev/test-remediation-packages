@@ -36,5 +36,5 @@ jobs:
             inactivity. Keep fresh with the 'lifecycle/frozen' label.
           stale-pr-label: 'request-cve-remediation'
           exempt-pr-labels: 'lifecycle/frozen'
-          days-before-stale: 1
-          days-before-close: 1
+          days-before-stale: 0
+          days-before-close: 0
