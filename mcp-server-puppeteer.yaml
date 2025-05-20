@@ -1,0 +1,46 @@
+package:
+  name: mcp-server-puppeteer
+  version: 2025.5.12
+  epoch: 0
+  description: "MCP Server for puppeteer"
+  copyright:
+    - license: Apache-2.0
+  dependencies:
+    runtime:
+      - nodejs
+      - npm
+      - typescript
+
+environment:
+  contents:
+    packages:
+      - busybox
+      - ca-certificates-bundle
+      - nodejs
+      - npm
+      - rsync
+
+pipeline:
+  - uses: git-checkout
+    with:
+      repository: https://github.com/modelcontextprotocol/servers.git
+      tag: ${{package.version}}
+      expected-commit: ca408ed463b7c9f4a23cf8e589f38eeea071d418
+
+  - name: build
+    working-directory: src/puppeteer
+    runs: |
+      npm install
+      npm run build
+
+  - name: install
+    working-directory: src/puppeteer
+    runs: |
+      mkdir -p ${{targets.destdir}}/usr/lib/node_modules/mcp-server-puppeteer
+      rsync -av --exclude='melange-out' /home/build/src/puppeteer/* ${{targets.destdir}}/usr/lib/node_modules/mcp-server-puppeteer
+
+      mkdir -p ${{targets.destdir}}/usr/bin/
+      ln -sf ${{targets.destdir}}/usr/lib/node_modules/mcp-server-puppeteer/dist/index.js ${{targets.destdir}}/usr/bin/mcp-server-puppeteer
+
+  - uses: strip
+

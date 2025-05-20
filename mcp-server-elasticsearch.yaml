@@ -1,0 +1,50 @@
+package:
+  name: mcp-server-elasticsearch
+  version: 0.1.1
+  epoch: 1
+  description: "MCP Server for elasticsearch"
+  copyright:
+    - license: Apache-2.0
+  dependencies:
+    runtime:
+      - nodejs
+      - npm
+      - typescript
+
+environment:
+  contents:
+    packages:
+      - busybox
+      - ca-certificates-bundle
+      - nodejs
+      - npm
+      - rsync
+
+pipeline:
+  - uses: git-checkout
+    with:
+      repository: https://github.com/elastic/mcp-server-elasticsearch
+      tag: v${{package.version}}
+      expected-commit: 2dfd5f45fe1d57410200e6a79ede477c7cd420f3
+
+  - name: build
+    runs: |
+      npm install
+      npm run build
+
+  - name: install
+    runs: |
+      mkdir -p ${{targets.destdir}}/usr/lib/node_modules/mcp-server-elasticsearch
+      rsync -av --exclude='melange-out' /home/build/* ${{targets.destdir}}/usr/lib/node_modules/mcp-server-elasticsearch
+      
+      mkdir -p ${{targets.destdir}}/usr/bin/
+      ln -sf ${{targets.destdir}}/usr/lib/node_modules/mcp-server-elasticsearch/dist/index.js ${{targets.destdir}}/usr/bin/mcp-server-elasticsearch
+
+  - uses: strip
+
+
+test:
+  pipeline:
+    - runs: |
+        set -e
+        mcp-server-elasticsearch -h

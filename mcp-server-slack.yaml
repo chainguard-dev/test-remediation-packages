@@ -1,0 +1,52 @@
+package:
+  name: mcp-server-slack
+  version: 2025.5.12
+  epoch: 0
+  description: "MCP Server for Slack"
+  copyright:
+    - license: Apache-2.0
+  dependencies:
+    runtime:
+      - nodejs
+      - npm
+      - typescript
+
+environment:
+  contents:
+    packages:
+      - busybox
+      - ca-certificates-bundle
+      - nodejs
+      - npm
+      - rsync
+
+pipeline:
+  - uses: git-checkout
+    with:
+      repository: https://github.com/modelcontextprotocol/servers.git
+      tag: ${{package.version}}
+      expected-commit: ca408ed463b7c9f4a23cf8e589f38eeea071d418
+
+  - name: build
+    working-directory: src/slack
+    runs: |
+      npm install
+      npm run build
+
+  - name: install
+    working-directory: src/slack
+    runs: |
+      mkdir -p ${{targets.destdir}}/usr/lib/node_modules/mcp-server-slack
+      rsync -av --exclude='melange-out' /home/build/src/slack/* ${{targets.destdir}}/usr/lib/node_modules/mcp-server-slack
+
+      mkdir -p ${{targets.destdir}}/usr/bin/
+      ln -sf ${{targets.destdir}}/usr/lib/node_modules/mcp-server-slack/dist/index.js ${{targets.destdir}}/usr/bin/mcp-server-slack
+
+  - uses: strip
+
+test:
+  pipeline:
+    - runs: |
+        set -e
+        ls ${{targets.destdir}}/usr/bin/
+        ${{targets.destdir}}/usr/bin/mcp-server-slack | grep 'Please set SLACK_BOT_TOKEN and SLACK_TEAM_ID environment variables' || exit 1
