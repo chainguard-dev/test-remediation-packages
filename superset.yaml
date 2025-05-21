@@ -1,7 +1,7 @@
 package:
   name: superset
   version: 4.1.1
-  epoch: 100
+  epoch: 101
   description: Data Visualization and Data Exploration Platform
   copyright:
     - license: Apache-2.0
@@ -41,6 +41,10 @@ pipeline:
       repository: https://github.com/apache/superset.git
       tag: ${{package.version}}
       expected-commit: 6264ff516532f0359d914bd72356f2007925109b
+
+  - uses: patch
+    with:
+      patches: GHSA-jfmj-5v4g-7637.patch
 
   - runs: |
       # Front-end build
