@@ -1,0 +1,4 @@
+--- a/Gemfile.template
++++ b/Gemfile.template
+@@ -34,0 +35 @@
++gem "rack", "= 3.0.12", :group => :development
