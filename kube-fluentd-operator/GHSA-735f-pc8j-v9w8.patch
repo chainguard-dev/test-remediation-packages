@@ -1,0 +1,4 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ -56,0 +57,1 @@
++gem 'google-protobuf', '3.25.5'  # Pin for GHSA-735f-pc8j-v9w8
