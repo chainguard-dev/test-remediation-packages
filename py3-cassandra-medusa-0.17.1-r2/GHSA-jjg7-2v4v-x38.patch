@@ -1,0 +1,5 @@
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -30 +31 @@
+ azure-storage-blob==12.17.0
++idna>=3.7
