@@ -1,0 +1,15 @@
+--- a/requirements/base.txt
++++ b/requirements/base.txt
+@@ -170 +170 @@
+-jinja2==3.1.4
++jinja2==3.1.5
+--- a/superset/translations/requirements.txt
++++ b/superset/translations/requirements.txt
+@@ -18 +18 @@
+-jinja2==3.1.4
++jinja2==3.1.5
+--- a/RELEASING/requirements.txt
++++ b/RELEASING/requirements.txt
+@@ -19 +19 @@
+-jinja2
++jinja2==3.1.5
