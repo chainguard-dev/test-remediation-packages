@@ -1,0 +1,5 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ -56,0 +57,2 @@
++# Pin google-protobuf to remediate GHSA-735f-pc8j-v9w8
++gem 'google-protobuf', '3.25.5'
