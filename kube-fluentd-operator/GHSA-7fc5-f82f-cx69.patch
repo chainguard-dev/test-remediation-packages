@@ -1,0 +1,5 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ -51,0 +52,2 @@
++# Pin net-imap to address vulnerability GHSA-7fc5-f82f-cx69
++gem 'net-imap', '0.3.8'
