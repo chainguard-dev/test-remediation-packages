@@ -1,0 +1,5 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -65,1 +65,1 @@ ssh-python = "1.0.0"
+-requests = "2.31.0"
++requests = "2.32.0"
