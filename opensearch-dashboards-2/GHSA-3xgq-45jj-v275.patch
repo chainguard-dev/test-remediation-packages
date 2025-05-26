@@ -1,0 +1,4 @@
+--- a/package.json
++++ b/package.json
+@@ -126,0 +127 @@
++    "**/cross-spawn": "^7.0.5",
