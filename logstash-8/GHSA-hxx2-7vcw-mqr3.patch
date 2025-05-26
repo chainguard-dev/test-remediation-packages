@@ -1,0 +1,5 @@
+--- a/Gemfile.template
++++ b/Gemfile.template
+@@ -37 +37,2 @@
+ gem "webmock", "~> 3", :group => :development
++gem "sinatra", "~> 4.1.0", :group => :development # Address GHSA-hxx2-7vcw-mqr3
