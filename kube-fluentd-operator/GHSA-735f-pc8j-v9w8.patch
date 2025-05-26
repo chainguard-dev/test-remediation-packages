@@ -1,0 +1,5 @@
+--- a/image/Gemfile
++++ b/image/Gemfile
+@@ -51 +51,2 @@
+ gem 'kubeclient', "~> 4.9.3"
++gem 'google-protobuf', '3.25.5'
