@@ -1,0 +1,10 @@
+--- a/package.json
++++ b/package.json
+@@ -94,1 +94,4 @@
+   "directories": {
+     "resources": "./dist/resources"
+   },
++  "overrides": {
++    "micromatch": "4.0.8"
++  },
+   "standard-version": {
