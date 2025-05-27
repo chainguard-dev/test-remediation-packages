@@ -1,0 +1,5 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ -56,0 +57,2 @@
++# explicitly pin webrick to address GHSA-6f62-3596-g6w7
++gem 'webrick', '1.8.2'
