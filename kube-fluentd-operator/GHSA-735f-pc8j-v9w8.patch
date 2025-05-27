@@ -1,0 +1,6 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ -55 +55,2 @@
+ gem 'gssapi', '1.3.1'
++# Pin google-protobuf to remediate GHSA-735f-pc8j-v9w8
++gem 'google-protobuf', '3.25.5'
