@@ -1,0 +1,5 @@
+--- a/requirements/base.txt
++++ b/requirements/base.txt
+@@ -47,1 +47,1 @@
+-certifi==2024.2.2
++certifi==2024.07.04
