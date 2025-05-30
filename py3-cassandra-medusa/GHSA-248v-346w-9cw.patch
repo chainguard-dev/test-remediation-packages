@@ -1,0 +1,5 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -79,1 +80,2 @@ azure-storage-blob = "12.17.0"
+azure-storage-blob = "12.17.0"
++certifi = "2024.07.04"
