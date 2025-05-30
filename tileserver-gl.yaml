@@ -1,7 +1,7 @@
 package:
   name: tileserver-gl
   version: 5.0.0
-  epoch: 100
+  epoch: 101
   description: Vector and raster maps with GL styles. Server side rendering by MapLibre GL Native. Map tile server for MapLibre GL JS, Android, iOS, Leaflet, OpenLayers, GIS via WMTS, etc.
   copyright:
     - license: BSD-2-Clause
@@ -53,6 +53,11 @@ pipeline:
       tag: v${{package.version}}
       expected-commit: 6cda7a0b384940b781838be7415b2ae448edcd29
       destination: app
+
+  - uses: patch
+    working-directory: app
+    with:
+      patches: GHSA-rhx6-c78j-4q9w.patch
 
   # patch and install npm dependencies
   - uses: patch
