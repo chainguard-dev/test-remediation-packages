@@ -1,0 +1,5 @@
+--- a/Gemfile.template
++++ b/Gemfile.template
+@@ -43 +43,2 @@
+ gem "bigdecimal", "~> 3.1"
++gem "net-imap", "= 0.4.19" # Security fix for GHSA-7fc5-f82f-cx69
