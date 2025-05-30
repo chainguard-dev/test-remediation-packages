@@ -1,0 +1,6 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ -6 +6,2 @@
+ gem 'oj', '3.13.23'
++# Pin rack to mitigate vulnerability GHSA-7g2v-jj9q-g3rg
++gem 'rack', '3.0.12'
