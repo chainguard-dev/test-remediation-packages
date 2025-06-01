@@ -1,0 +1,20 @@
+--- a/backend/src/apiserver/visualization/requirements.txt
++++ b/backend/src/apiserver/visualization/requirements.txt
+@@ -250 +250 @@
+-keras==2.10.0
++keras==3.8.0
+--- a/components/contrib/sample/keras/train_classifier/requirements.txt
++++ b/components/contrib/sample/keras/train_classifier/requirements.txt
+@@ -1 +1 @@
+-keras
++keras==3.8.0
+--- a/samples/contrib/nvidia-resnet/components/preprocess/requirements.txt
++++ b/samples/contrib/nvidia-resnet/components/preprocess/requirements.txt
+@@ -1 +1 @@
+-keras
++keras==3.8.0
+--- a/samples/contrib/nvidia-resnet/components/train/requirements.txt
++++ b/samples/contrib/nvidia-resnet/components/train/requirements.txt
+@@ -1 +1 @@
+-keras
++keras==3.8.0
