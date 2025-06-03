@@ -1,0 +1,6 @@
+--- a/image/Gemfile
++++ b/image/Gemfile
+@@ -55 +55,2 @@
+ gem 'gssapi', '1.3.1'
++gem 'net-imap', '0.3.8'
+ gem 'specific_install', '0.3.8'
