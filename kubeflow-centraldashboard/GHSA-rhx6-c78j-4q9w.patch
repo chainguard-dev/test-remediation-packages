@@ -1,0 +1,11 @@
+--- a/components/centraldashboard/package.json
++++ b/components/centraldashboard/package.json
+@@ -134,6 +134,7 @@
+     "overrides": {
+         "pug-loader": {
+             "pug": "^3.0.1"
+-        }
++        },
++        "path-to-regexp": "0.1.12"
+     }
+ }
