@@ -1,0 +1,4 @@
+--- a/ggshield.yaml
++++ b/ggshield.yaml
+@@ -24,0 +25 @@
++      pip3 install cryptography==43.0.1  # Fix for GHSA-h4gh-qq45-vh27
