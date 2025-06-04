@@ -1,0 +1,9 @@
+--- a/server/package.json
++++ b/server/package.json
+@@ -76 @@
+-    "mysql2": "^3.3.5",
++    "mysql2": "^3.9.8",
+@@ -130 @@
+-    "supertest/**/cookiejar": "^2.1.4"
++    "supertest/**/cookiejar": "^2.1.4",
++    "mysql2": "3.9.8"
