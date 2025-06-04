@@ -1,0 +1,5 @@
+--- a/Gemfile.template
++++ b/Gemfile.template
+@@ -43 +43,2 @@
+ gem "bigdecimal", "~> 3.1"
++gem "sinatra", "= 4.1.0" # Addresses GHSA-hxx2-7vcw-mqr3
