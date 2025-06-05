@@ -1,0 +1,4 @@
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -30,0 +31 @@
++idna==3.7
