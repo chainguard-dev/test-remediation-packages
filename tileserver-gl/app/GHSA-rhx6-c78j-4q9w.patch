@@ -1,0 +1,9 @@
+--- a/package.json
++++ b/package.json
+@@ -83,1 +83,4 @@
+-  "homepage": "https://github.com/maptiler/tileserver-gl#readme"
++  "homepage": "https://github.com/maptiler/tileserver-gl#readme",
++  "overrides": {
++    "path-to-regexp": "0.1.12"
++  }
+@@ -84,0 +85,0 @@
