@@ -1,0 +1,5 @@
+--- a/Gemfile.template
++++ b/Gemfile.template
+@@ -36 +36,2 @@
+ gem "rspec", "~> 3.5", :group => :development
++gem "sinatra", "~> 4.1.0", :group => :development
