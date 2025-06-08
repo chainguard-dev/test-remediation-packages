@@ -1,0 +1,5 @@
+--- a/Gemfile.template
++++ b/Gemfile.template
+@@ -42,1 +42,2 @@
+ gem "thwait"
++gem "rexml", "~> 3.3.9" # Explicitly pin rexml to address GHSA-2rxp-v6pw-ch6m
