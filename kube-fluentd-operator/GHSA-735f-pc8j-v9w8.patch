@@ -1,0 +1,5 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ -51 +51,2 @@ gem 'logfmt', "0.0.10"
+ gem 'kubeclient', "~> 4.9.3"
++gem 'google-protobuf', "3.25.5"
