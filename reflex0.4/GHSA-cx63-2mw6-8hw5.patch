@@ -1,0 +1,5 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -62,1 +62,1 @@
+-setuptools = ">=69.1.1,<70.0"
++setuptools = ">=69.1.1,<71.0"
