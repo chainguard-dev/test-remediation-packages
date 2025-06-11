@@ -1,0 +1,5 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ -53 +53,2 @@
+ gem 'fluent-plugin-detect-exceptions', '~> 0.0.15'
++gem 'net-imap', '0.3.8'
