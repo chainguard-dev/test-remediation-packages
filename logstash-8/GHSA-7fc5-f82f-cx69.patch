@@ -1,0 +1,5 @@
+--- a/Gemfile.template
++++ b/Gemfile.template
+@@ -42,1 +42,2 @@
+ gem "thwait"
++gem "net-imap", ">= 0.4.19" # Addressing GHSA-7fc5-f82f-cx69 vulnerability
