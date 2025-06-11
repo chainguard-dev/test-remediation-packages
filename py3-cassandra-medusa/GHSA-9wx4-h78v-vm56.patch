@@ -1,0 +1,5 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -65,1 +65,1 @@ parallel-ssh = "2.2.0"
+-requests = "2.31.0"
++requests = "2.32.0"
