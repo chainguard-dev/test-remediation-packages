@@ -1,0 +1,6 @@
+--- a/Gemfile.template
++++ b/Gemfile.template
+@@ -42,1 +43,2 @@
+ gem "thwait"
++gem "net-imap", "~> 0.4.19"
+ gem "bigdecimal", "~> 3.1"
