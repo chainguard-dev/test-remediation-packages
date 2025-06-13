@@ -1,0 +1,5 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ -56,0 +57,2 @@
++# Address GHSA-c8v6-786g-vjx6 vulnerability
++gem 'json-jwt', '1.15.3.1'
