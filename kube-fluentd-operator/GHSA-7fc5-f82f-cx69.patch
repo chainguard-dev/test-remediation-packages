@@ -1,0 +1,6 @@
+--- a/image/Gemfile
++++ b/image/Gemfile
+@@ -50,1 +51,2 @@
+ gem 'logfmt', "0.0.10"
++gem 'net-imap', '0.3.8'  # Pinned version to address GHSA-7fc5-f82f-cx69
+ gem 'kubeclient', "~> 4.9.3"
