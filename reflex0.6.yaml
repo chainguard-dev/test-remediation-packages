@@ -1,7 +1,7 @@
 package:
   name: reflex0.6
   version: 0.6.6
-  epoch: 100
+  epoch: 101
   description: Web apps in pure Python
   copyright:
     - license: Apache-2.0
@@ -33,6 +33,10 @@ pipeline:
       repository: https://github.com/reflex-dev/reflex
       tag: v${{package.version}}
       expected-commit: 0c8192222fe8a6258e768fef82336dce3566671f
+
+  - uses: patch
+    with:
+      patches: GHSA-q2x7-8rv6-6q7h.patch
 
   - runs: '#Fix CVEs
 
