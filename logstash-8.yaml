@@ -186,6 +186,7 @@ subpackages:
         with:
           image: logstash
           version-path: ${{vars.major-version}}/debian-12
+          commit: d98753a583b158233e688e62f98c5a2c18cc1bd9
       - runs: |
           mkdir -p ${{targets.subpkgdir}}/opt/bitnami/logstash
           mkdir -p ${{targets.subpkgdir}}/opt/bitnami/scripts/logstash/
