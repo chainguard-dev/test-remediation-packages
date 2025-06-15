@@ -1,0 +1,5 @@
+--- a/Gemfile.template
++++ b/Gemfile.template
+@@ -42,1 +42,2 @@
+ gem "thwait"
++gem "rexml", "~> 3.3.9"
