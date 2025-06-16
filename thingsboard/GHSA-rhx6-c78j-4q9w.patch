@@ -1,0 +1,15 @@
+--- a/msa/js-executor/package.json
++++ b/msa/js-executor/package.json
+@@ -59,1 +60,2 @@
+     "node-fetch": "^2.6.7",
++    "path-to-regexp": "^0.1.12",
+--- a/msa/web-ui/package.json
++++ b/msa/web-ui/package.json
+@@ -55,1 +56,2 @@
+     "minimist": "^1.2.6",
++    "path-to-regexp": "^0.1.12",
+--- a/ui-ngx/package.json
++++ b/ui-ngx/package.json
+@@ -177,1 +178,2 @@
+     "cacache": "17.0.4",
++    "path-to-regexp": "^0.1.12",
