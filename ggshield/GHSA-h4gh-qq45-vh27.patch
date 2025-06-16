@@ -1,0 +1,10 @@
+--- /dev/null
++++ b/requirements.txt
+@@ -0,0 +1 @@
++cryptography==43.0.1
+--- a/ggshield.yaml
++++ b/ggshield.yaml
+@@ -29 +29,2 @@ pipeline:
+   - runs: |
++      pip3 install -r requirements.txt  # Install cryptography 43.0.1 for GHSA-h4gh-qq45-vh27
+       pip3 install certifi -U  # https://github.com/advisories/GHSA-xqr8-7jwr-rhp7
