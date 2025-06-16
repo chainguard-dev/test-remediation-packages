@@ -1,0 +1,5 @@
+--- a/package.json
++++ b/package.json
+@@ -128,1 +128,2 @@
+     "**/yaml": "^2.2.2",
++    "**/cross-spawn": "^7.0.5"
