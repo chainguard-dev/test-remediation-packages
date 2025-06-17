@@ -1,0 +1,24 @@
+--- a/libs/core-functions/package.json
++++ b/libs/core-functions/package.json
+@@ -54,2 +54,6 @@
+-  }
+-}
++  },
++  "pnpm": {
++    "overrides": {
++      "undici": "6.21.1"
++    }
++  }
++}
+--- a/services/rotor/package.json
++++ b/services/rotor/package.json
+@@ -78,2 +78,6 @@
+-  }
+-}
++  },
++  "pnpm": {
++    "overrides": {
++      "undici": "6.21.1"
++    }
++  }
++}
