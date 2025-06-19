@@ -1,0 +1,15 @@
+--- a/msa/js-executor/package.json
++++ b/msa/js-executor/package.json
+@@ -60 +60,2 @@
++    "path-to-regexp": "^0.1.12"
+   }
+--- a/msa/web-ui/package.json
++++ b/msa/web-ui/package.json
+@@ -56 +56,2 @@
++    "path-to-regexp": "^0.1.12"
+   }
+--- a/ui-ngx/package.json
++++ b/ui-ngx/package.json
+@@ -178 +178,2 @@
++    "path-to-regexp": "^0.1.12"
+   }
