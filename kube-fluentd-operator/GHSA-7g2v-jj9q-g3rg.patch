@@ -1,0 +1,4 @@
+--- a/image/Gemfile
++++ b/image/Gemfile
+@@ -4,0 +5 @@
++gem 'rack', '3.0.12'
