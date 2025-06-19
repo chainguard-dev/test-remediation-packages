@@ -1,0 +1,7 @@
+--- a/image/Gemfile
++++ b/image/Gemfile
+@@ @@
+ gem "fluentd", "1.16.1"
++gem 'google-protobuf', '3.25.5'
+ 
+ gem 'oj', '3.13.23'
