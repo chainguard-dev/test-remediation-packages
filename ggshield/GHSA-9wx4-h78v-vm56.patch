@@ -1,0 +1,8 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -0,0 +1,4 @@
++[project]
++dependencies = [
++    "requests>=2.32.3"
++]
++
