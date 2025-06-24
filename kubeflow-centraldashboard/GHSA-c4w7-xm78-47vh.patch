@@ -1,0 +1,6 @@
+--- a/components/centraldashboard/package.json
++++ b/components/centraldashboard/package.json
+@@ -136,1 +136,3 @@
+-        }
++        },
++        "y18n": "^4.0.1"
