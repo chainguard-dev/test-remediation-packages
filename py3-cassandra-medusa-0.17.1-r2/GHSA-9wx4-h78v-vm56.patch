@@ -1,0 +1,5 @@
+--- requirements.txt
++++ requirements.txt
+@@ -16 +16 @@
+-requests>=2.22.0
++requests>=2.32.0
