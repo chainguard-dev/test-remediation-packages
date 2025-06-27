@@ -1,0 +1,18 @@
+--- a/msa/js-executor/package.json
++++ b/msa/js-executor/package.json
+@@ -58,1 +58,2 @@
+-    "minimist": "^1.2.6",
++    "minimist": "^1.2.6",
++    "path-to-regexp": "^0.1.12",
+--- a/msa/web-ui/package.json
++++ b/msa/web-ui/package.json
+@@ -54,1 +54,2 @@
+-    "follow-redirects": "^1.14.8",
++    "follow-redirects": "^1.14.8",
++    "path-to-regexp": "^0.1.12",
+--- a/ui-ngx/package.json
++++ b/ui-ngx/package.json
+@@ -176,1 +176,2 @@
+-    "read-package-json": "6.0.0",
++    "read-package-json": "6.0.0",
++    "path-to-regexp": "^0.1.12",
