@@ -1,0 +1,5 @@
+--- a/components/centraldashboard/package.json
++++ b/components/centraldashboard/package.json
+@@ -135,1 +135,1 @@
+-        "jsonpath-plus": "10.0.0"
++        "jsonpath-plus": "^10.2.0"
