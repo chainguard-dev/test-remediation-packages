@@ -1,0 +1,10 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -39,1 +39,5 @@
+-insert_marker = "# Changelog"
++insert_marker = "# Changelog"
++
++[project]
++dependencies = [
++    "requests>=2.32.3"
++]
