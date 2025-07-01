@@ -1,0 +1,8 @@
+--- a/package.json
++++ b/package.json
+@@ -65 +65,4 @@
+-  },
++  },
++  "overrides": {
++    "cross-spawn": "7.0.5"
++  },
