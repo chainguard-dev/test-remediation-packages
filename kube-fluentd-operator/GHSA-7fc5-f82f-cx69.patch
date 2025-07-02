@@ -1,0 +1,8 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ @@
+-gem 'logfmt', "0.0.10"
+-gem 'kubeclient', "~> 4.9.3"
++gem 'logfmt', "0.0.10"
++gem 'net-imap', '0.3.8'
++gem 'kubeclient', "~> 4.9.3"
