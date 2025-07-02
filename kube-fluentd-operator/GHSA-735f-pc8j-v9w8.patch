@@ -1,0 +1,5 @@
+--- kube-fluentd-operator.yaml
++++ kube-fluentd-operator.yaml
+@@ @@
+-      # Bumping google-protobuf to 3.23 solves this.
++      # Bumping google-protobuf to 3.25.5 solves this and addresses GHSA-735f-pc8j-v9w8.
