@@ -1,0 +1,6 @@
+--- a/ui/package.json
++++ b/ui/package.json
+@@ -88,2 +88,3 @@
+     "resolutions": {
++        "micromatch": "^4.0.8",
+         "semver": "^7.5.2",
