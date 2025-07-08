@@ -1,7 +1,7 @@
 package:
   name: ts-patch
   version: 3.2.1
-  epoch: 100
+  epoch: 101
   description: "Patch typescript to allow custom transformers (plugins) during build"
   copyright:
     - license: MIT
@@ -26,6 +26,10 @@ pipeline:
       repository: https://github.com/nonara/ts-patch.git
       tag: v${{package.version}}
       expected-commit: 41b2112495265819558e48f3d56a81dfb4533005
+
+  - uses: patch
+    with:
+      patches: GHSA-952p-6rrq-rcjv.patch
 
   - name: npm install
     runs: |
