@@ -1,0 +1,5 @@
+--- a/server/package.json
++++ b/server/package.json
+@@ -50 +50 @@
+-    "body-parser": "^1.20.0",
++    "body-parser": "1.20.3",
