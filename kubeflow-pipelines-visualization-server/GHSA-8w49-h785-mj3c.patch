@@ -1,0 +1,28 @@
+--- a/backend/src/apiserver/visualization/requirements.txt
++++ b/backend/src/apiserver/visualization/requirements.txt
+@@ -512,10 +512,10 @@
+ tfx-bsl==1.9.0
+     # via
+     #   tensorflow-data-validation
+     #   tensorflow-model-analysis
+ threadpoolctl==3.2.0
+     # via scikit-learn
+-tornado==6.3.3
++tornado==6.4.2
+     # via
+     #   -r requirements.in
+     #   bokeh
+--- a/test/sample-test/requirements.txt
++++ b/test/sample-test/requirements.txt
+@@ -179,10 +179,10 @@
+ tenacity==9.0.0
+     # via papermill
+ termcolor==2.4.0
+     # via fire
+ tomli==2.0.1
+     # via black
+-tornado==6.4.1
++tornado==6.4.2
+     # via jupyter-client
+ tqdm==4.66.5
+     # via papermill
