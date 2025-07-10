@@ -1,0 +1,10 @@
+--- a/components/centraldashboard/package.json
++++ b/components/centraldashboard/package.json
+@@ -134,2 +134,3 @@
+         "pug-loader": {
+             "pug": "^3.0.1"
+-        }
++        },
++        "jsonpath-plus": "^10.2.0"
+     }
+ }
