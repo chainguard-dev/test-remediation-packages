@@ -1,0 +1,4 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ -55,0 +56 @@
++gem 'google-protobuf', '3.25.5'
