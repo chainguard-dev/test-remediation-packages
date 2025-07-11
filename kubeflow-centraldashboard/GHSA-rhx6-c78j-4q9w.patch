@@ -1,0 +1,8 @@
+--- a/components/centraldashboard/package.json
++++ b/components/centraldashboard/package.json
+@@ -136,2 +136,3 @@
+-        }
+-    }
++        },
++        "path-to-regexp": "0.1.12"
++    }
