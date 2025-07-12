@@ -1,0 +1,10 @@
+# No changes required - google-protobuf vulnerability GHSA-735f-pc8j-v9w8 is already remediated
+# 
+# The Melange YAML pipeline already contains the necessary sed command to update
+# google-protobuf from version 3.22.1 to 3.25.5 in fluent-plugin-google-cloud.gemspec:
+#
+# sed -e "s/'google-protobuf', '3.22.1'/'google-protobuf', '3.25.5'/g" -i fluent-plugin-google-cloud.gemspec
+#
+# This addresses the vulnerability by updating to the target version 3.25.5.
+# The image/Gemfile does not contain google-protobuf as a direct dependency.
+# No additional patches are required.
