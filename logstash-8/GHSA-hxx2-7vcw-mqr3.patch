@@ -1,0 +1,19 @@
+# No sinatra dependency found in any of the provided manifest files
+# The sinatra gem (version 4.0.0 -> 4.1.0) is not present in:
+# - Gemfile.template
+# - Rakefile
+# - lib/pluginmanager/templates/*/Rakefile
+# - qa/Gemfile
+# - qa/Rakefile
+# - qa/integration/Gemfile
+# - qa/integration/fixtures/logstash-dummy-pack/Gemfile
+# - qa/integration/fixtures/logstash-dummy-pack/Rakefile
+# - tools/logstash-docgen/Gemfile
+# - tools/logstash-docgen/Rakefile
+# - tools/paquet/Gemfile
+# - tools/paquet/Rakefile
+# - tools/paquet/spec/support/Gemfile
+# - tools/paquet/spec/support/Rakefile
+#
+# Cannot generate patch without locating the specific file containing sinatra dependency declaration.
+# Please provide the manifest file that contains the sinatra dependency or verify the vulnerability report.
