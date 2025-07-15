@@ -1,0 +1,10 @@
+--- docker-image/v1.18/debian-gcs/Gemfile
++++ docker-image/v1.18/debian-gcs/Gemfile
+@@ -8,1 +8,1 @@
+-gem "rexml", "~> 3.2.5"
++gem "rexml", "~> 3.3.9"
+--- docker-image/v1.18/debian-s3/Gemfile
++++ docker-image/v1.18/debian-s3/Gemfile
+@@ -8,1 +8,1 @@
+-gem "rexml", "~> 3.2.5"
++gem "rexml", "~> 3.3.9"
