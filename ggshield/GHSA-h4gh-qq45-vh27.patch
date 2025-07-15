@@ -1,0 +1,9 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -39 +39,5 @@
+ insert_marker = "# Changelog"
++
++[project]
++dependencies = [
++    "cryptography>=43.0.1"
++]
