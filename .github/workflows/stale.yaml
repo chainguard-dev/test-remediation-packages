@@ -38,3 +38,4 @@ jobs:
           exempt-pr-labels: 'lifecycle/frozen'
           days-before-stale: 0
           days-before-close: 0
+          operations-per-run: 100
