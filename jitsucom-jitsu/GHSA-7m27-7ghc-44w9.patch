@@ -1,0 +1,10 @@
+--- a/webapps/console/package.json
++++ b/webapps/console/package.json
+@@ -77 @@
+-    "next": "^15.1.1",
++    "next": "^15.1.2",
+--- a/webapps/ee-api/package.json
++++ b/webapps/ee-api/package.json
+@@ -28 @@
+-    "next": "^15.1.1",
++    "next": "^15.1.2",
