@@ -1,0 +1,6 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ -56 +56,2 @@
+-gem 'specific_install', '0.3.8'
++gem 'specific_install', '0.3.8'
++gem 'webrick', '1.8.2'
