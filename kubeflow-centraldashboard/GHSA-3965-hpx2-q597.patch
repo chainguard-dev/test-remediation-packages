@@ -1,0 +1,8 @@
+--- a/components/centraldashboard/package.json
++++ b/components/centraldashboard/package.json
+@@ -120 +120 @@
+-        "pug": "^3.0.1",
++        "pug": "^3.0.3",
+@@ -135 +135 @@
+-            "pug": "^3.0.1"
++            "pug": "^3.0.3"
