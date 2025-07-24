@@ -1,0 +1,8 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,0 +1,4 @@
++[project]
++dependencies = [
++    "cryptography>=43.0.1"
++]
++
