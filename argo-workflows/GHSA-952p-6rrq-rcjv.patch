@@ -1,0 +1,6 @@
+--- a/ui/package.json
++++ b/ui/package.json
+@@ -88,1 +88,2 @@
+-    "resolutions": {
++    "resolutions": {
++        "micromatch": "^4.0.8",
