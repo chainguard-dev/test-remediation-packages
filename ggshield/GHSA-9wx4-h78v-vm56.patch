@@ -1,0 +1,4 @@
+--- a/ggshield.yaml
++++ b/ggshield.yaml
+@@ -28,0 +29,1 @@
++      pip3 install requests>=2.32.3 -U  # https://github.com/advisories/GHSA-9wx4-h78v-vm56
