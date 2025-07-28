@@ -1,0 +1,8 @@
+--- a/services/rotor/package.json
++++ b/services/rotor/package.json
+@@ -78,0 +79,5 @@
++  },
++  "pnpm": {
++    "overrides": {
++      "undici": "^6.21.1"
++    }
