@@ -1,0 +1,11 @@
+--- a/server/package.json
++++ b/server/package.json
+@@ -50 +50 @@
+-    "body-parser": "^1.20.0",
++    "body-parser": "1.20.3",
+@@ -129,3 +129,4 @@
+   "resolutions": {
+-    "supertest/**/cookiejar": "^2.1.4"
++    "supertest/**/cookiejar": "^2.1.4",
++    "body-parser": "1.20.3"
+   }
