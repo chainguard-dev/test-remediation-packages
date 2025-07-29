@@ -1,7 +1,7 @@
 issuer: https://accounts.google.com
 
 # staging: ai-build-failure0b6i89pk2j7u2f@staging-enforce-cd1e.iam.gserviceaccount.com
-subject_pattern: "(117815286528662951292)"
+subject_pattern: "(110160732638115110864)"
 
 permissions:
   contents: read
