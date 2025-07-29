@@ -1,0 +1,6 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ @@
+-gem "fluentd", "1.16.1"
++gem "fluentd", "1.16.1"
++gem 'google-protobuf', '3.25.5'
