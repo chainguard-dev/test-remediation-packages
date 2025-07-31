@@ -1,0 +1,5 @@
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -10 +10,2 @@
+ cryptography<=35.0,>=2.5
++idna>=3.7
