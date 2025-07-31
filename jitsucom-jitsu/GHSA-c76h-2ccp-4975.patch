@@ -1,0 +1,19 @@
+--- a/libs/core-functions/package.json
++++ b/libs/core-functions/package.json
+@@ -54,1 +54,4 @@
+-  }
++  },
++  "overrides": {
++    "undici": "^6.21.1"
++  }
+--- a/services/rotor/package.json
++++ b/services/rotor/package.json
+@@ -46,1 +46,4 @@
+-  },
++  },
++  "overrides": {
++    "undici": "^6.21.1"
++  },
+@@ -78,1 +81,1 @@
+-  }
++  }
