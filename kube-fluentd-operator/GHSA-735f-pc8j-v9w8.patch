@@ -1,0 +1,6 @@
+--- a/image/Gemfile
++++ b/image/Gemfile
+@@ @@
+-gem 'gelf', "3.1.0"
++gem 'gelf', "3.1.0"
++gem 'google-protobuf', '3.25.5'
