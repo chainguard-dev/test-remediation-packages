@@ -1,0 +1,5 @@
+--- a/server/package.json
++++ b/server/package.json
+@@ -76 +76 @@
+-    "mysql2": "^3.3.5",
++    "mysql2": "^3.9.8",
