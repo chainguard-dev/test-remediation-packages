@@ -3,7 +3,7 @@ package:
   # The kubernetes daemonset trails fluentd releases by a bit
   name: ruby3.2-fluentd-kubernetes-daemonset-1.18
   version: 1.18.0.1.0
-  epoch: 100
+  epoch: 101 # GHSA-2rxp-v6pw-ch6m
   description: Fluentd ${{vars.fluentdMM}} daemonset for Kubernetes
   copyright:
     - license: Apache-2.0
@@ -48,6 +48,10 @@ pipeline:
       expected-commit: f357c8975b6888c5bdd91d6bc764a7e48bdf686f
       repository: https://github.com/fluent/fluentd-kubernetes-daemonset.git
       tag: v${{vars.mangled-package-version}}
+
+  - uses: patch
+    with:
+      patches: GHSA-2rxp-v6pw-ch6m.patch
 
 subpackages:
   - range: plugins
