@@ -1,0 +1,6 @@
+--- a/components/centraldashboard/package.json
++++ b/components/centraldashboard/package.json
+@@ -133,1 +133,2 @@
+-    "overrides": {
++    "overrides": {
++        "jsonpath-plus": "10.2.0",
