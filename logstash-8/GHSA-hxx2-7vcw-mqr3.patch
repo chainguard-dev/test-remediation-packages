@@ -1,0 +1,4 @@
+--- Gemfile.template
++++ Gemfile.template
+@@ -36,0 +37 @@
++gem "sinatra", "~> 4.1.0", :group => :development
