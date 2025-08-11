@@ -1,0 +1,51 @@
+--- a/components/centraldashboard-angular/backend/package.json
++++ b/components/centraldashboard-angular/backend/package.json
+@@ -56,0 +57,3 @@
++  },
++  "overrides": {
++    "path-to-regexp": "0.1.12"
+--- a/components/centraldashboard-angular/frontend/package.json
++++ b/components/centraldashboard-angular/frontend/package.json
+@@ -80,0 +81,3 @@
++  },
++  "overrides": {
++    "path-to-regexp": "0.1.12"
+--- a/components/centraldashboard/package.json
++++ b/components/centraldashboard/package.json
+@@ -134,1 +134,2 @@
+-        "pug-loader": {
++        "pug-loader": {
+             "pug": "^3.0.1"
+-        }
++        },
++        "path-to-regexp": "0.1.12"
+--- a/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
++++ b/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
+@@ -81,0 +82,3 @@
++  },
++  "overrides": {
++    "path-to-regexp": "0.1.12"
+--- a/components/crud-web-apps/common/frontend/kubeflow-common-lib/projects/kubeflow/package.json
++++ b/components/crud-web-apps/common/frontend/kubeflow-common-lib/projects/kubeflow/package.json
+@@ -23,0 +24,3 @@
++  },
++  "overrides": {
++    "path-to-regexp": "0.1.12"
+--- a/components/crud-web-apps/jupyter/frontend/package.json
++++ b/components/crud-web-apps/jupyter/frontend/package.json
+@@ -85,0 +86,3 @@
++  },
++  "overrides": {
++    "path-to-regexp": "0.1.12"
+--- a/components/crud-web-apps/tensorboards/frontend/package.json
++++ b/components/crud-web-apps/tensorboards/frontend/package.json
+@@ -83,0 +84,3 @@
++  },
++  "overrides": {
++    "path-to-regexp": "0.1.12"
+--- a/components/crud-web-apps/volumes/frontend/package.json
++++ b/components/crud-web-apps/volumes/frontend/package.json
+@@ -82,0 +83,3 @@
++  },
++  "overrides": {
++    "path-to-regexp": "0.1.12"
