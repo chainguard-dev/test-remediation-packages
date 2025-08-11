@@ -1,0 +1,9 @@
+--- kube-fluentd-operator.yaml
++++ kube-fluentd-operator.yaml
+@@ @@
+-      # Moving to grpc 1.58.3 causes a dependency resolution issue as grpc >= 1.55.0, < 1.59.0 requires
+-      # google-protobuf ~> 3.23 but fluent-plugin-google-cloud had pinned google-protobuf to version 3.22.1.
+-      # Bumping google-protobuf to 3.23 solves this.
++      # Moving to grpc 1.58.3 causes a dependency resolution issue as grpc >= 1.55.0, < 1.59.0 requires
++      # google-protobuf ~> 3.23 but fluent-plugin-google-cloud had pinned google-protobuf to version 3.22.1.
++      # Bumping google-protobuf to 3.25.5 solves this and addresses GHSA-735f-pc8j-v9w8.
