@@ -1,0 +1,44 @@
+--- a/components/crud-web-apps/common/backend/kubeflow/kubeflow/crud_backend/requirements.txt
++++ b/components/crud-web-apps/common/backend/kubeflow/kubeflow/crud_backend/requirements.txt
+@@ -7,0 +7,1 @@
++jinja2>=3.1.5
+--- a/components/crud-web-apps/jupyter/backend/requirements.txt
++++ b/components/crud-web-apps/jupyter/backend/requirements.txt
+@@ -2,0 +2,1 @@
++jinja2>=3.1.5
+--- a/components/crud-web-apps/tensorboards/backend/requirements.txt
++++ b/components/crud-web-apps/tensorboards/backend/requirements.txt
+@@ -2,0 +2,1 @@
++jinja2>=3.1.5
+--- a/components/crud-web-apps/volumes/backend/requirements.txt
++++ b/components/crud-web-apps/volumes/backend/requirements.txt
+@@ -2,0 +2,1 @@
++jinja2>=3.1.5
+--- a/components/example-notebook-servers/codeserver-python/requirements.txt
++++ b/components/example-notebook-servers/codeserver-python/requirements.txt
+@@ -3,0 +3,1 @@
++jinja2>=3.1.5
+--- a/components/example-notebook-servers/jupyter-pytorch-cuda-full/requirements.txt
++++ b/components/example-notebook-servers/jupyter-pytorch-cuda-full/requirements.txt
+@@ -6,0 +6,1 @@
++jinja2>=3.1.5
+--- a/components/example-notebook-servers/jupyter-pytorch-full/requirements.txt
++++ b/components/example-notebook-servers/jupyter-pytorch-full/requirements.txt
+@@ -6,0 +6,1 @@
++jinja2>=3.1.5
+--- a/components/example-notebook-servers/jupyter-pytorch-gaudi-full/requirements.txt
++++ b/components/example-notebook-servers/jupyter-pytorch-gaudi-full/requirements.txt
+@@ -6,0 +6,1 @@
++jinja2>=3.1.5
+--- a/components/example-notebook-servers/jupyter-scipy/requirements.txt
++++ b/components/example-notebook-servers/jupyter-scipy/requirements.txt
+@@ -6,0 +6,1 @@
++jinja2>=3.1.5
+--- a/components/example-notebook-servers/jupyter-tensorflow-cuda-full/requirements.txt
++++ b/components/example-notebook-servers/jupyter-tensorflow-cuda-full/requirements.txt
+@@ -6,0 +6,1 @@
++jinja2>=3.1.5
+--- a/components/example-notebook-servers/jupyter-tensorflow-full/requirements.txt
++++ b/components/example-notebook-servers/jupyter-tensorflow-full/requirements.txt
+@@ -6,0 +6,1 @@
++jinja2>=3.1.5
