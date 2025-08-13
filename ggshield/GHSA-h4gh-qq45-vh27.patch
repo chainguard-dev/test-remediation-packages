@@ -1,0 +1,7 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -39,0 +40,4 @@
++
++[project]
++name = "ggshield"
++dependencies = ["cryptography>=43.0.1"]
