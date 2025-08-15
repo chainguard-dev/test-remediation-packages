@@ -1,0 +1,22 @@
+--- a/libs/core-functions/package.json
++++ b/libs/core-functions/package.json
+@@ -53,1 +53,5 @@
+-    "zod": "^3.23.8"
++    "zod": "^3.23.8"
++  },
++  "overrides": {
++    "undici": "^6.21.1"
+@@ -54,1 +58,1 @@
+-  }
++  }
+--- a/services/rotor/package.json
++++ b/services/rotor/package.json
+@@ -45,1 +45,5 @@
+-    "semver": "^7.6.3"
++    "semver": "^7.6.3"
++  },
++  "overrides": {
++    "undici": "^6.21.1"
+@@ -78,1 +82,1 @@
+-  }
++  }
