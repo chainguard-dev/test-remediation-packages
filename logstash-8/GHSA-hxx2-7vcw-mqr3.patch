@@ -1,0 +1,5 @@
+--- Gemfile.template
++++ Gemfile.template
+@@ -39 +39,2 @@
+ gem "simplecov-json", require: false, :group => :development
++gem "sinatra", "~> 4.1.0", :group => :development
