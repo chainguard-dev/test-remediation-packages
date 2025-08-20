@@ -1,0 +1,36 @@
+--- a/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
++++ b/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
+@@ -79,0 +80,3 @@
++  },
++  "overrides": {
++    "path-to-regexp": "0.1.12"
+@@ -80 +83 @@
+-}
++  }
+--- a/components/crud-web-apps/jupyter/frontend/package.json
++++ b/components/crud-web-apps/jupyter/frontend/package.json
+@@ -84,0 +85,3 @@
++  },
++  "overrides": {
++    "path-to-regexp": "0.1.12"
+@@ -85 +88 @@
+-}
++  }
+--- a/components/crud-web-apps/tensorboards/frontend/package.json
++++ b/components/crud-web-apps/tensorboards/frontend/package.json
+@@ -82,0 +83,3 @@
++  },
++  "overrides": {
++    "path-to-regexp": "0.1.12"
+@@ -83 +86 @@
+-}
++  }
+--- a/components/crud-web-apps/volumes/frontend/package.json
++++ b/components/crud-web-apps/volumes/frontend/package.json
+@@ -81,0 +82,3 @@
++  },
++  "overrides": {
++    "path-to-regexp": "0.1.12"
+@@ -82 +85 @@
+-}
++  }
