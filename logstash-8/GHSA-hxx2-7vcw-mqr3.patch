@@ -1,0 +1,5 @@
+--- Gemfile.template
++++ Gemfile.template
+@@ -25,0 +26,1 @@
+ gem "fileutils", "~> 1.7"
++gem "sinatra", ">= 4.1.0"
