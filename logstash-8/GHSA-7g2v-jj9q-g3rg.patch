@@ -1,0 +1,4 @@
+--- Gemfile.template
++++ Gemfile.template
+@@ -26,0 +27 @@
++gem "rack", "= 3.0.12" # Pin to fix GHSA-7g2v-jj9q-g3rg
