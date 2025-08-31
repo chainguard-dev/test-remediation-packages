@@ -1,0 +1,6 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -54,1 +54,2 @@
+-cassandra-driver = "3.28.0"
++cassandra-driver = "3.28.0"
++certifi = "2024.07.04"
