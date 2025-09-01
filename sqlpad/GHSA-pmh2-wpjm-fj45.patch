@@ -1,0 +1,6 @@
+--- a/package.json
++++ b/package.json
+@@ -17,0 +18,3 @@
++  "resolutions": {
++    "mysql2": "3.9.8"
++  },
