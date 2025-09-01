@@ -1,0 +1,32 @@
+--- a/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
++++ b/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
+@@ -80,1 +80,4 @@
+-  }
++  },
++  "overrides": {
++    "pug": "^3.0.3"
++  }
+--- a/components/crud-web-apps/jupyter/frontend/package.json
++++ b/components/crud-web-apps/jupyter/frontend/package.json
+@@ -84,1 +84,4 @@
+-  }
++  },
++  "overrides": {
++    "pug": "^3.0.3"
++  }
+--- a/components/crud-web-apps/tensorboards/frontend/package.json
++++ b/components/crud-web-apps/tensorboards/frontend/package.json
+@@ -82,1 +82,4 @@
+-  }
++  },
++  "overrides": {
++    "pug": "^3.0.3"
++  }
+--- a/components/crud-web-apps/volumes/frontend/package.json
++++ b/components/crud-web-apps/volumes/frontend/package.json
+@@ -81,1 +81,4 @@
+-  }
++  },
++  "overrides": {
++    "pug": "^3.0.3"
++  }
