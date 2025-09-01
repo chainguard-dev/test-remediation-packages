@@ -1,0 +1,4 @@
+--- a/image/Gemfile
++++ b/image/Gemfile
+@@ -48,0 +49 @@
++gem 'json-jwt', '1.15.3.1'
