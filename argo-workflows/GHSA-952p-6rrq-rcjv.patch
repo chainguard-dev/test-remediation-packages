@@ -1,0 +1,8 @@
+--- a/ui/package.json
++++ b/ui/package.json
+@@ -89,3 +89,4 @@
+         "semver": "^7.5.2",
+-        "types-ramda": "0.29.4"
++        "types-ramda": "0.29.4",
++        "micromatch": "^4.0.8"
+     }
