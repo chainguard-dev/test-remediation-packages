@@ -1,0 +1,50 @@
+--- a/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
++++ b/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
+@@ -79,2 +79,5 @@
+-    "typescript": "~4.2.4"
+-  }
++    "typescript": "~4.2.4"
++  },
++  "overrides": {
++    "jsonpath-plus": "10.2.0"
++  }
+--- a/components/crud-web-apps/common/frontend/kubeflow-common-lib/projects/kubeflow/package.json
++++ b/components/crud-web-apps/common/frontend/kubeflow-common-lib/projects/kubeflow/package.json
+@@ -21,2 +21,5 @@
+-    "@kubernetes/client-node": "^0.12.2"
+-  }
++    "@kubernetes/client-node": "^0.12.2"
++  },
++  "overrides": {
++    "jsonpath-plus": "10.2.0"
++  }
+--- a/components/crud-web-apps/jupyter/frontend/package.json
++++ b/components/crud-web-apps/jupyter/frontend/package.json
+@@ -83,2 +83,5 @@
+-    "wait-on": "^7.0.1"
+-  }
++    "wait-on": "^7.0.1"
++  },
++  "overrides": {
++    "jsonpath-plus": "10.2.0"
++  }
+--- a/components/crud-web-apps/tensorboards/frontend/package.json
++++ b/components/crud-web-apps/tensorboards/frontend/package.json
+@@ -81,2 +81,5 @@
+-    "wait-on": "^7.0.1"
+-  }
++    "wait-on": "^7.0.1"
++  },
++  "overrides": {
++    "jsonpath-plus": "10.2.0"
++  }
+--- a/components/crud-web-apps/volumes/frontend/package.json
++++ b/components/crud-web-apps/volumes/frontend/package.json
+@@ -80,2 +80,5 @@
+-    "typescript": "~4.2.4"
+-  }
++    "typescript": "~4.2.4"
++  },
++  "overrides": {
++    "jsonpath-plus": "10.2.0"
++  }
