@@ -1,0 +1,4 @@
+--- Gemfile.template
++++ Gemfile.template
+@@ -41,0 +42 @@
++gem "net-imap", "~> 0.4.19"
