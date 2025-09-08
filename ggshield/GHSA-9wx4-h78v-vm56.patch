@@ -1,0 +1,7 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,0 +1,4 @@
++[project]
++name = "ggshield"
++dependencies = ["requests>=2.32.3"]
++
