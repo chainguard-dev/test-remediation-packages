@@ -1,0 +1,8 @@
+--- a/kubeflow-centraldashboard.yaml
++++ b/kubeflow-centraldashboard.yaml
+@@ -44,2 +44,3 @@
+-        "cookie": "0.7.0",
+-        "jsonpath-plus": "10.0.0"
++        "cookie": "0.7.0",
++        "jsonpath-plus": "10.0.0",
++        "pug": "^3.0.3"
