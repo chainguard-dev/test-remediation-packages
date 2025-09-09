@@ -1,7 +1,7 @@
 package:
   name: reflex0.4
   version: 0.4.8
-  epoch: 100
+  epoch: 101 # GHSA-cx63-2mw6-8hw5
   description: "Web apps in pure Python"
   copyright:
     - license: Apache-2.0
@@ -33,6 +33,10 @@ pipeline:
       repository: https://github.com/reflex-dev/reflex
       tag: v${{package.version}}
       expected-commit: 64805d3524fad0c468f32b9ca3f5a836b294fd26
+
+  - uses: patch
+    with:
+      patches: GHSA-cx63-2mw6-8hw5.patch
 
   - runs: |
       #Fix gunicorn CVE
