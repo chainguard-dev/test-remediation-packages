@@ -1,0 +1,10 @@
+--- kube-fluentd-operator.yaml
++++ kube-fluentd-operator.yaml
+@@ @@
+-      # Bumping google-protobuf to 3.23 solves this.
++      # Bumping google-protobuf to 3.25.5 solves this.
+--- image/Gemfile
++++ image/Gemfile
+@@ @@
+ gem 'specific_install', '0.3.8'
++gem 'google-protobuf', '3.25.5'
