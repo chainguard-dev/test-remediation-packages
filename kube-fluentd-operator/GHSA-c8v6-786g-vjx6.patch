@@ -1,0 +1,5 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ @@
+gem 'specific_install', '0.3.8'
++gem 'json-jwt', '1.15.3.1'
