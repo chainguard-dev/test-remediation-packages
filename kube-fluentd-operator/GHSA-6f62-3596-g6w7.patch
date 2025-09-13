@@ -1,0 +1,4 @@
+--- a/image/Gemfile
++++ b/image/Gemfile
+@@ -55,0 +56 @@
++gem 'webrick', '1.8.2'
