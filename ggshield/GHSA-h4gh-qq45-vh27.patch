@@ -1,0 +1,1 @@
+ERROR: Cannot generate patch - no dependency management sections found in provided pyproject.toml file. The file only contains tool configurations (black, pytest, isort, coverage, pyright, scriv) and no dependency specifications. Need access to setup.py, requirements.txt, or a pyproject.toml with actual dependency sections to update cryptography to version 43.0.1.
