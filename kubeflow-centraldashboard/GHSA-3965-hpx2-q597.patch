@@ -1,0 +1,6 @@
+--- a/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
++++ b/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
+@@ -80,0 +81,3 @@
++  },
++  "overrides": {
++    "pug": "^3.0.3"
