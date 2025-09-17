@@ -1,0 +1,5 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ @@
+ gem 'specific_install', '0.3.8'
++gem 'net-imap', '0.3.8'
