@@ -1,0 +1,6 @@
+--- Gemfile.template
++++ Gemfile.template
+@@ -41,1 +41,2 @@
+ gem "murmurhash3", "= 0.1.6" # Pins until version 0.1.7-java is released
++gem "rack", "= 3.0.12" # Pin to address GHSA-7g2v-jj9q-g3rg
+ gem "thwait"
