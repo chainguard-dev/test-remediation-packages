@@ -1,0 +1,6 @@
+--- a/ggshield.yaml
++++ b/ggshield.yaml
+@@ -29,1 +29,2 @@
+-      pip3 install certifi -U  # https://github.com/advisories/GHSA-xqr8-7jwr-rhp7
++      pip3 install certifi -U  # https://github.com/advisories/GHSA-xqr8-7jwr-rhp7
++      pip3 install 'requests>=2.32.3' -U  # GHSA-9wx4-h78v-vm56
