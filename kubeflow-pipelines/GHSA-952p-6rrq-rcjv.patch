@@ -1,13 +1,8 @@
-diff --git a/test/frontend-integration-test/package-lock.json b/test/frontend-integration-test/package-lock.json
-index 9e4fcd166..01d5d4eff 100644
---- a/test/frontend-integration-test/package-lock.json
-+++ b/test/frontend-integration-test/package-lock.json
-@@ -3053,7 +3053,7 @@
-         "@types/stack-utils": "^2.0.0",
-         "chalk": "^4.0.0",
-         "graceful-fs": "^4.2.9",
--        "micromatch": "^4.0.4",
-+        "micromatch": "^4.0.8",
-         "pretty-format": "^29.4.1",
-         "slash": "^3.0.0",
-         "stack-utils": "^2.0.3"
+--- a/frontend/package.json
++++ b/frontend/package.json
+@@ -152,2 +152,3 @@
+   "resolutions": {
+-    "workbox-webpack-plugin": "6.6.0"
++    "workbox-webpack-plugin": "6.6.0",
++    "micromatch": "^4.0.8"
+   },
