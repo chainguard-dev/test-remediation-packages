@@ -1,0 +1,4 @@
+--- a/kubeflow-centraldashboard.yaml
++++ b/kubeflow-centraldashboard.yaml
+@@ -39,0 +40,1 @@
++        "y18n": "^4.0.1",
