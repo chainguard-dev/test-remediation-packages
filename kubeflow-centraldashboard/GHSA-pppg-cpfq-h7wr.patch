@@ -1,0 +1,10 @@
+--- a/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
++++ b/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
+@@ -79,0 +80,3 @@
++  },
++  "overrides": {
++    "jsonpath-plus": "^10.2.0"
+@@ -80,1 +83,0 @@
+-  }
++  }
+}
