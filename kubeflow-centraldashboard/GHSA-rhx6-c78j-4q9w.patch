@@ -1,0 +1,5 @@
+--- a/kubeflow-centraldashboard.yaml
++++ b/kubeflow-centraldashboard.yaml
+@@ -58 +58 @@
+-        "path-to-regexp": "0.1.10",
++        "path-to-regexp": "0.1.12",
