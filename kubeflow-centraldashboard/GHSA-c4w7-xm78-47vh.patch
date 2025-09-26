@@ -1,0 +1,40 @@
+--- a/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
++++ b/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
+@@ -80,1 +80,4 @@
+-  }
++  },
++  "overrides": {
++    "y18n": "^4.0.1"
++  }
+--- a/components/crud-web-apps/common/frontend/kubeflow-common-lib/projects/kubeflow/package.json
++++ b/components/crud-web-apps/common/frontend/kubeflow-common-lib/projects/kubeflow/package.json
+@@ -23,1 +23,4 @@
+-}
++},
++"overrides": {
++  "y18n": "^4.0.1"
++}
+--- a/components/crud-web-apps/jupyter/frontend/package.json
++++ b/components/crud-web-apps/jupyter/frontend/package.json
+@@ -85,1 +85,4 @@
+-}
++},
++"overrides": {
++  "y18n": "^4.0.1"
++}
+--- a/components/crud-web-apps/tensorboards/frontend/package.json
++++ b/components/crud-web-apps/tensorboards/frontend/package.json
+@@ -83,1 +83,4 @@
+-}
++},
++"overrides": {
++  "y18n": "^4.0.1"
++}
+--- a/components/crud-web-apps/volumes/frontend/package.json
++++ b/components/crud-web-apps/volumes/frontend/package.json
+@@ -82,1 +82,4 @@
+-}
++},
++"overrides": {
++  "y18n": "^4.0.1"
++}
