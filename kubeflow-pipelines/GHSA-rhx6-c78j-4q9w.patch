@@ -1,0 +1,12 @@
+--- a/frontend/package.json
++++ b/frontend/package.json
+@@ -152,2 +152,3 @@
+   "resolutions": {
++    "path-to-regexp": "0.1.12",
+     "workbox-webpack-plugin": "6.6.0"
+--- a/frontend/server/package.json
++++ b/frontend/server/package.json
+@@ -70,0 +71,3 @@
++  "resolutions": {
++    "path-to-regexp": "0.1.12"
++  },
