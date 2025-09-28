@@ -1,0 +1,5 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -75 +75 @@ asyncio = "3.4.3"
+-aiohttp = "3.9.4"
++aiohttp = "3.10.2"
