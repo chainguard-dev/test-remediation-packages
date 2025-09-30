@@ -1,0 +1,6 @@
+--- a/package.json
++++ b/package.json
+@@ -82,0 +83,3 @@
++  "overrides": {
++    "path-to-regexp": "^0.1.12"
++  },
