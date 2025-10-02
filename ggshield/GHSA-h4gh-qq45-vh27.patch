@@ -1,0 +1,4 @@
+# No valid patch can be generated
+# The cryptography dependency is not found in any of the provided manifest files.
+# The pyproject.toml file only contains tool configurations and lacks dependency declarations.
+# Additional files like setup.py or requirements.txt are needed to update the cryptography dependency.
