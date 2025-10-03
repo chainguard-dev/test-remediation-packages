@@ -1,0 +1,17 @@
+--- a/frontend/package.json
++++ b/frontend/package.json
+@@ -152,3 +152,4 @@
+   "resolutions": {
+-    "workbox-webpack-plugin": "6.6.0"
++    "workbox-webpack-plugin": "6.6.0",
++    "path-to-regexp": "0.1.12"
+   },
+--- a/frontend/server/package.json
++++ b/frontend/server/package.json
+@@ -37,2 +37,5 @@
+     "typescript": "^3.6.4"
+   },
++  "overrides": {
++    "path-to-regexp": "0.1.12"
++  },
+   "scripts": {
