@@ -1,0 +1,6 @@
+--- a/Gemfile.template
++++ b/Gemfile.template
+@@ -43 +43,2 @@
+-gem "bigdecimal", "~> 3.1"
++gem "bigdecimal", "~> 3.1"
++gem "net-imap", "= 0.4.19"
