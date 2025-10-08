@@ -1,0 +1,4 @@
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -30,0 +31,1 @@ azure-storage-blob==12.17.0
++certifi>=2024.07.04
