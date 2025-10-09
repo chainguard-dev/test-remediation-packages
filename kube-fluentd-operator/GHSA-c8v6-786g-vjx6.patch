@@ -1,0 +1,6 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ @@
+gem 'oj', '3.13.23'
++gem 'json-jwt', '1.15.3.1'
+gem 'ffi'
