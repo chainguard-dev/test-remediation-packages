@@ -1,0 +1,12 @@
+--- a/frontend/package.json
++++ b/frontend/package.json
+@@ -154 +154,3 @@
++  "overrides": {
++    "path-to-regexp": "0.1.12"
++  },
+--- a/frontend/server/package.json
++++ b/frontend/server/package.json
+@@ -18 +18,3 @@
++  "overrides": {
++    "path-to-regexp": "0.1.12"
++  },
