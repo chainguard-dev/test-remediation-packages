@@ -1,0 +1,4 @@
+--- Gemfile.template
++++ Gemfile.template
+@@ -22,0 +23 @@
++gem "sinatra", "~> 4.1.0" # Security fix for GHSA-hxx2-7vcw-mqr3
