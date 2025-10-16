@@ -1,0 +1,6 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ @@
+gem 'ffi'
++gem 'google-protobuf', '3.25.5'
+gem 'fluent-plugin-amqp', "0.14.0"
