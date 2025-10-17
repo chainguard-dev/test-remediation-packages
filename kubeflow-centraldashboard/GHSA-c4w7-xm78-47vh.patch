@@ -1,0 +1,11 @@
+--- a/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
++++ b/components/crud-web-apps/common/frontend/kubeflow-common-lib/package.json
+@@ -80,1 +80,4 @@
+-  }
++  },
++  "overrides": {
++    "y18n": "^4.0.1"
++  }
+@@ -81,1 +84,0 @@
+-}
++}
