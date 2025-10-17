@@ -1,0 +1,5 @@
+--- a/sqlpad.yaml
++++ b/sqlpad.yaml
+@@ -35 +35 @@
+-      for override in '"semver"="6.3.1"' '"@node-saml/node-saml"="4.0.5"' '"ip"="2.0.1"' '"jose"="4.15.5"' '"xlsx"="https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"' '"tar"="6.2.1"'; do
++      for override in '"semver"="6.3.1"' '"@node-saml/node-saml"="4.0.5"' '"ip"="2.0.1"' '"jose"="4.15.5"' '"xlsx"="https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"' '"tar"="6.2.1"' '"mysql2"="3.9.8"'; do
