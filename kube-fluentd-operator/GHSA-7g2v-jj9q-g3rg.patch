@@ -1,0 +1,5 @@
+--- a/kube-fluentd-operator.yaml
++++ b/kube-fluentd-operator.yaml
+@@ -74 +74 @@
+-      bundle update rack
++      bundle add rack --version "3.0.12"
