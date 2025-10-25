@@ -1,0 +1,5 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -65,1 +65,1 @@
+-requests = "2.31.0"
++requests = "2.32.0"
