@@ -1,0 +1,5 @@
+--- a/backend/src/apiserver/visualization/requirements.txt
++++ b/backend/src/apiserver/visualization/requirements.txt
+@@ -517,1 +517,1 @@
+-tornado==6.3.3
++tornado==6.4.2
