@@ -1,7 +1,7 @@
 package:
   name: py3-cassandra-medusa-0.17.1-r2
   version: 0.17.1
-  epoch: 100
+  epoch: 101 # GHSA-jjg7-2v4v-x38
   description: Apache Cassandra backup and restore tool
   copyright:
     - license: Apache-2.0
@@ -27,6 +27,10 @@ pipeline:
       repository: https://github.com/thelastpickle/cassandra-medusa
       tag: v${{package.version}}
       expected-commit: 4a34c29ea09010420a7139336a2758a7c765e343
+
+  - uses: patch
+    with:
+      patches: GHSA-jjg7-2v4v-x38.patch
 
   - name: Python Build
     runs: 'pip install wheel
