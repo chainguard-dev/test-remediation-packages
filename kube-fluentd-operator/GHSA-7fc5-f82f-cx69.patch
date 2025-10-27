@@ -1,0 +1,6 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ @@
+gem 'specific_install', '0.3.8'
++# Explicitly pin net-imap to address GHSA-7fc5-f82f-cx69
++gem 'net-imap', '0.3.8'
