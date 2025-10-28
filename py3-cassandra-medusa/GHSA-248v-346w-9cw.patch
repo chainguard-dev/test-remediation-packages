@@ -1,0 +1,4 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -79,0 +80,1 @@
++certifi = "2024.07.04"
