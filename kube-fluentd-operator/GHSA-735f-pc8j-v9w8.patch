@@ -1,0 +1,6 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ @@
+gem 'fluent-plugin-detect-exceptions', '~> 0.0.15'
++gem 'google-protobuf', '3.25.5'
+# webhdfs requires gssapi plugin to work
