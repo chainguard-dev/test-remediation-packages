@@ -1,0 +1,5 @@
+--- a/backend/src/apiserver/visualization/requirements.txt
++++ b/backend/src/apiserver/visualization/requirements.txt
+@@ -250,1 +250,1 @@
+-keras==2.10.0
++keras==3.8.0
