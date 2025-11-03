@@ -1,0 +1,16 @@
+--- a/libs/core-functions/package.json
++++ b/libs/core-functions/package.json
+@@ -53 +53,3 @@
+-    "zod": "^3.23.8"
++    "zod": "^3.23.8"
++  },
++  "overrides": {
++    "undici": "^6.21.1"
+--- a/services/rotor/package.json
++++ b/services/rotor/package.json
+@@ -77 +77,3 @@
+-    "webpack-cli": "^5.1.4"
++    "webpack-cli": "^5.1.4"
++  },
++  "overrides": {
++    "undici": "^6.21.1"
