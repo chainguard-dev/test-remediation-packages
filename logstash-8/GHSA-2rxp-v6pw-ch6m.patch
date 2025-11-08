@@ -1,0 +1,4 @@
+--- Gemfile.template
++++ Gemfile.template
+@@ -44,0 +45 @@
++gem "rexml", ">= 3.3.9"
