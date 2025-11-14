@@ -1,0 +1,6 @@
+--- a/package.json
++++ b/package.json
+@@ -96 +96,2 @@
+-    "**/async": "^3.2.3",
++    "**/async": "^3.2.3",
++    "**/cross-spawn": "^7.0.5",
