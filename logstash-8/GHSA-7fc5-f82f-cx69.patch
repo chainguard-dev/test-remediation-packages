@@ -1,0 +1,4 @@
+--- Gemfile.template
++++ Gemfile.template
+@@ -42,0 +43 @@
++gem "net-imap", "~> 0.4.19" # Pin to secure version to fix GHSA-7fc5-f82f-cx69
