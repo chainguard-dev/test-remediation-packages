@@ -1,0 +1,5 @@
+--- Gemfile.template
++++ Gemfile.template
+@@ @@
+gem "bigdecimal", "~> 3.1"
++gem "net-imap", "~> 0.4.19"
