@@ -1,0 +1,6 @@
+--- image/Gemfile
++++ image/Gemfile
+@@ -55,0 +56,1 @@
++gem 'google-protobuf', '3.25.5'
+@@ -56,1 +57,0 @@
+-gem 'specific_install', '0.3.8'
