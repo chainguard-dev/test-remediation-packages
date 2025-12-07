@@ -1,0 +1,10 @@
+--- a/docker-image/v1.18/debian-graylog/Gemfile
++++ b/docker-image/v1.18/debian-graylog/Gemfile
+@@ -8,1 +8,1 @@
+-gem "rexml", "~> 3.2.5"
++gem "rexml", "~> 3.3.3"
+--- a/docker-image/v1.18/debian-s3/Gemfile
++++ b/docker-image/v1.18/debian-s3/Gemfile
+@@ -8,1 +8,1 @@
+-gem "rexml", "~> 3.2.5"
++gem "rexml", "~> 3.3.3"
