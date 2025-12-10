@@ -1,0 +1,10 @@
+--- a/package.json
++++ b/package.json
+@@ -22,2 +22,5 @@
+-    "precommit": "lint-staged"
+-  }
++    "precommit": "lint-staged"
++  },
++  "resolutions": {
++    "mysql2": "3.9.8"
++  }
