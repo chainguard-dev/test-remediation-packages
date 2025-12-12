@@ -1,0 +1,10 @@
+--- a/package.json
++++ b/package.json
+@@ -72 +72,3 @@
+   "license": "BSD-2-Clause",
++  "overrides": {
++    "path-to-regexp": "0.1.12"
++  },
+@@ -73 +76 @@
+-  "engines": {
++  "engines": {
