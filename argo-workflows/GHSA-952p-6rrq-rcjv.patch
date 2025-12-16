@@ -1,0 +1,6 @@
+--- a/ui/package.json
++++ b/ui/package.json
+@@ -90,2 +90,3 @@
+-        "types-ramda": "0.29.4"
++        "types-ramda": "0.29.4",
++        "micromatch": "^4.0.8"
