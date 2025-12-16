@@ -1,0 +1,9 @@
+--- a/package.json
++++ b/package.json
+@@ -21,0 +22,3 @@
++  },
++  "resolutions": {
++    "body-parser": "1.20.3"
+@@ -23 +26 @@
+-  }
++  }
