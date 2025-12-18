@@ -1,0 +1,7 @@
+issuer: https://accounts.google.com
+
+# dev-eco: eco-loganalyzer-fyx3552ho2jd67@dev-eco-jb8z.iam.gserviceaccount.com
+subject_pattern: "(114852726760136030104)"
+
+permissions:
+  issues: write
