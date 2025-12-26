@@ -1,0 +1,10 @@
+--- a/services/rotor/package.json
++++ b/services/rotor/package.json
+@@ -77,2 +77,5 @@
+-    "webpack-cli": "^5.1.4"
+-  }
++    "webpack-cli": "^5.1.4"
++  },
++  "overrides": {
++    "undici": "6.21.1"
++  }
