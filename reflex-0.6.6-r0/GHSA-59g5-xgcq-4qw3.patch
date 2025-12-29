@@ -1,0 +1,6 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -35,0 +36 @@
++python-multipart = ">=0.0.18,<0.1"
+@@ -36 +36,0 @@
+-python-multipart = ">=0.0.5,<0.1"
