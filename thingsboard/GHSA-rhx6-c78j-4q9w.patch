@@ -1,0 +1,4 @@
+--- a/ui-ngx/package.json
++++ b/ui-ngx/package.json
+@@ -177,0 +178,1 @@
++    "path-to-regexp": "0.1.12"
