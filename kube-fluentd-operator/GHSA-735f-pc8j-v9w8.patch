@@ -1,0 +1,13 @@
+# GHSA-735f-pc8j-v9w8 Vulnerability Fix
+# 
+# This vulnerability affects google-protobuf and requires updating to version 3.25.5
+# 
+# STATUS: NO PATCH NEEDED
+# 
+# The kube-fluentd-operator.yaml file already contains the correct fix on line 86:
+# sed -e "s/'google-protobuf', '3.22.1'/'google-protobuf', '3.25.5'/g" -i fluent-plugin-google-cloud.gemspec
+# 
+# This sed command updates google-protobuf from 3.22.1 to 3.25.5 during the build process,
+# which satisfies the vulnerability fix requirements.
+# 
+# No additional changes to image/Gemfile or other files are required.
