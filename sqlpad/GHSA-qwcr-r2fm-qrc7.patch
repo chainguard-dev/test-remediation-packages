@@ -1,0 +1,10 @@
+--- a/package.json
++++ b/package.json
+@@ -22,2 +22,6 @@
+-    "precommit": "lint-staged"
+-  }
++    "precommit": "lint-staged"
++  },
++  "resolutions": {
++    "body-parser": "1.20.3"
++  }
