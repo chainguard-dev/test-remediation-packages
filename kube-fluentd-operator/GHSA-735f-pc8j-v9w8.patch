@@ -1,0 +1,4 @@
+--- kube-fluentd-operator.yaml
++++ kube-fluentd-operator.yaml
+@@ -90,0 +91,1 @@
++      sed -e "s/'google-protobuf', '3.24.2'/'google-protobuf', '3.25.5'/g" -i fluent-plugin-google-cloud.gemspec
