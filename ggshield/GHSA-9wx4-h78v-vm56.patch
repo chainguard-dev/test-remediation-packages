@@ -1,0 +1,12 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -39,0 +40,8 @@
++
++[build-system]
++requires = ["setuptools>=45", "wheel"]
++build-backend = "setuptools.build_meta"
++
++[project]
++dependencies = [
++    "requests>=2.32.3"
++]
