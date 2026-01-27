@@ -1,0 +1,11 @@
+--- a/backend/src/apiserver/visualization/requirements.txt
++++ b/backend/src/apiserver/visualization/requirements.txt
+@@ -247,7 +247,7 @@ jupyter-core==5.3.1
+     #   notebook
+ jupyterlab-widgets==1.1.7
+     # via ipywidgets
+-keras==2.10.0
++keras==3.8.0
+     # via tensorflow
+ keras-preprocessing==1.1.2
+     # via tensorflow
