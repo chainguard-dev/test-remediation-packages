@@ -1,0 +1,6 @@
+--- a/services/rotor/package.json
++++ b/services/rotor/package.json
+@@ -46,0 +47,3 @@
++  "overrides": {
++    "undici": "6.21.1"
++  },
