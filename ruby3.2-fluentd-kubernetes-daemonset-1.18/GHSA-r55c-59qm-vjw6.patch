@@ -1,0 +1,40 @@
+--- a/docker-image/v1.15/debian-kinesis/Gemfile
++++ b/docker-image/v1.15/debian-kinesis/Gemfile
+@@ -8,1 +8,1 @@
+-gem "rexml", "~> 3.2.5"
++gem "rexml", "3.3.3"
+--- a/docker-image/v1.15/debian-loggly/Gemfile
++++ b/docker-image/v1.15/debian-loggly/Gemfile
+@@ -8,1 +8,1 @@
+-gem "rexml", "~> 3.2.5"
++gem "rexml", "3.3.3"
+--- a/docker-image/v1.16/debian-elasticsearch6/Gemfile
++++ b/docker-image/v1.16/debian-elasticsearch6/Gemfile
+@@ -8,1 +8,1 @@
+-gem "rexml", "~> 3.2.5"
++gem "rexml", "3.3.3"
+--- a/docker-image/v1.16/debian-s3/Gemfile
++++ b/docker-image/v1.16/debian-s3/Gemfile
+@@ -8,1 +8,1 @@
+-gem "rexml", "~> 3.2.5"
++gem "rexml", "3.3.3"
+--- a/docker-image/v1.17/debian-logzio/Gemfile
++++ b/docker-image/v1.17/debian-logzio/Gemfile
+@@ -8,1 +8,1 @@
+-gem "rexml", "~> 3.2.5"
++gem "rexml", "3.3.3"
+--- a/docker-image/v1.17/debian-s3/Gemfile
++++ b/docker-image/v1.17/debian-s3/Gemfile
+@@ -8,1 +8,1 @@
+-gem "rexml", "~> 3.2.5"
++gem "rexml", "3.3.3"
+--- a/docker-image/v1.18/debian-graylog/Gemfile
++++ b/docker-image/v1.18/debian-graylog/Gemfile
+@@ -8,1 +8,1 @@
+-gem "rexml", "~> 3.2.5"
++gem "rexml", "3.3.3"
+--- a/docker-image/v1.18/debian-s3/Gemfile
++++ b/docker-image/v1.18/debian-s3/Gemfile
+@@ -8,1 +8,1 @@
+-gem "rexml", "~> 3.2.5"
++gem "rexml", "3.3.3"
