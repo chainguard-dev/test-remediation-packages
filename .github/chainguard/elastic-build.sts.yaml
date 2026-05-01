@@ -7,4 +7,3 @@ subject_pattern: "(105587019147205988443|110897445954037084144)"
 
 permissions:
   contents: read
-  checks: write
